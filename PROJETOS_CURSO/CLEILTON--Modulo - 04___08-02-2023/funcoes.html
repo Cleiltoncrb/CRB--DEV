@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Funções</title>
+</head>
+<body> <h1>
+	<script>
+
+		/* #################################################### */
+
+		function pulaLinha(){ // Fumção para pular linha
+			document.write("<br><br>");
+		}
+
+		function mostra(frase) {
+
+			document.write("****************************************");
+			pulaLinha();
+			document.write(frase);
+			pulaLinha();
+		}
+
+		
+		/* #################################################### */
+
+		var nome = "Waldomiro";
+
+		var valor1 = 18
+		var valor2 = 2
+
+
+		/* #################################################### */
+
+		mostra("Meu nome é: ");
+
+		document.write("Meu nome é: " + nome);
+		pulaLinha(); 
+
+		function somaDoisNumeros(numero1, numero2 ) {
+
+			document.write(numero1 + numero2);
+		}
+
+		function multiplicaDoisNumeros() {
+
+			document.write(valor1 * valor2);
+		}
+
+		function divideDoisNumeros () {
+			document.write(valor2/valor1);
+		}
+
+
+		/* #################################################### */
+
+		somaDoisNumeros(valor1, valor2);
+		pulaLinha();
+		multiplicaDoisNumeros();
+		pulaLinha();
+		divideDoisNumeros();
+		pulaLinha();
+		
+
+		/* #################################################### */
+
+		mostra("QOCON ANS CLEILTO");
+		mostra("BEM-VINDO AO MEU PROGRAMA");
+		mostra("<b>ELE REALMENTE FUNCIONA</b>");
+		mostra("EU USEI FUNÇÃO PARA FAZER ISSO");
+
+	</script>
+</h1>
+</body>
+</html>

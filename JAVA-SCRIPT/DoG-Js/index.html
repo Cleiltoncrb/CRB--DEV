@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- basic -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- mobile metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<!-- site metas -->
+	<title>DoGs-Js</title>
+
+	<!-- bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- style css -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Responsive-->
+	<link rel="stylesheet" href="css/responsive.css">
+	<!-- fevicon -->
+	<link rel="icon" href="images/fevicon.png" type="image/gif" />
+	<!-- Scrollbar Custom CSS -->
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+	<!-- Tweaks for older IEs-->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<!-- owl stylesheets -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+</head>
+
+<body>
+	<!-- section banner start -->
+	<div class="header_section">
+		<div class="container-fluid">
+			<div class="row">
+			</div>
+		</div>
+		<div class="banner_main">
+			<div class="container">
+				<div class="ram">
+					<div class="row">
+						<div class="col-sm-auto">
+							<h1 class="taital">Melhor amigo</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- section gallery start -->
+	<div class="gallery_section_2">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<h1 class="pet_taital">Escolha a raça</h1>
+					<div>
+						<select class="select" id="dogSelecionado" onchange="getSelectValue();">
+							<!-- onchange="getSelectValue();" -->
+							<option value="null" disabled selected hidden>Selecione</option>
+							<option value="beagle">BEAGLE</option>
+							<option value="chihuahua">CHIHUAHUA</option>
+							<option value="papillon">PAPILLON</option>
+							<option value="pug">PUG</option>
+							<option value="shiba">SHIBA</option>
+						</select>
+						<div>
+							<table>
+								<tr>
+									<td>
+										<div class="opc" id="dogImg0"></div>
+									</td>
+									<td>
+										<div class="opc" id="dogImg1"></div>
+									</td>
+									<td>
+										<div class="opc" id="dogImg2"></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div>
+							<div  id="listaImagens" class="container-lista flex flex-wrap">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="dog_img"><img src="images/dog-img.png" style="max-width: 100%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gallery_main layout_padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="about_taital">
+						<strong>
+							<span style="color: #ffffff;">
+								Foto
+							</span>
+							Cães
+						</strong>
+					</h1>
+					<p class="sed_text"> </p>
+				</div>
+			</div>
+			<div class="gallery_blog">
+
+				<div>
+					<table class="Style_DoG_Js">
+
+						<tr>
+							<td id="DoG-Js1"> </td>
+							<td id="DoG-Js2"> </td>
+							<td id="DoG-Js3"> </td>
+						</tr>
+						<tr>
+							<td id="DoG-Js4"> </td>
+							<td id="DoG-Js5"> </td>
+							<td id="DoG-Js6"> </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./js/script.js"></script>
+
+
+</html>

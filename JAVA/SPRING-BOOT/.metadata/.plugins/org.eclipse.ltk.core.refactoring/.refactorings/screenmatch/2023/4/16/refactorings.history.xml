@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;somaAvaliacao&apos; in &apos;screenmatch.Filme&apos; to &apos;somaDasAvaliacoes&apos;&#x0D;&#x0A;- Original project: &apos;screenmatch&apos;&#x0D;&#x0A;- Original element: &apos;screenmatch.Filme.somaAvaliacao&apos;&#x0D;&#x0A;- Renamed element: &apos;screenmatch.Filme.somaDasAvaliacoes&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;somaAvaliacao&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;screenmatch{Filme.java[Filme^somaAvaliacao" name="somaDasAvaliacoes" references="true" setter="false" stamp="1681827823035" textual="false" version="1.0"/>
+</session>

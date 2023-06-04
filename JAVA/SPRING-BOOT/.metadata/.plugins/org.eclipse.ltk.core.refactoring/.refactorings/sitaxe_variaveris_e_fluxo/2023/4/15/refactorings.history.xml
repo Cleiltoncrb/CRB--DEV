@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;sitaxe_variaveris_e_fluxo.ProgramaComBreack.java&apos; to &apos;ProgramaComBreak.java&apos;&#x0D;&#x0A;- Original project: &apos;sitaxe_variaveris_e_fluxo&apos;&#x0D;&#x0A;- Original element: &apos;sitaxe_variaveris_e_fluxo.ProgramaComBreack.java&apos;&#x0D;&#x0A;- Renamed element: &apos;sitaxe_variaveris_e_fluxo.ProgramaComBreak.java&apos;" description="Rename compilation unit &apos;ProgramaComBreack.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;sitaxe_variaveris_e_fluxo{ProgramaComBreack.java" name="ProgramaComBreak.java" references="false" stamp="1681396406524" version="1.0"/>
+</session>

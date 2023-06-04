@@ -1,0 +1,8 @@
+.container {
+    margin: 20%;    /* adiciona uma margem para centralizar os quadrados na tela*/
+    display: flex;    /* coloca os quadrados lado a lado */
+    flex-direction: column;
+    gap: 10px;    /* adiciona espaços iguais entre cada quadrado */
+    color: #071b8d;
+    
+}

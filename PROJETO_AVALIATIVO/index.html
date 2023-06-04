@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/listaOrdenada.js"></script>
+
+    <title>Projeto-JS</title>
+</head>
+
+<body>
+    <script>
+
+        criarListaOrdenadaPorNomeAluno();
+        criarListaOrdenadaPorMateria();
+
+        console.log(`\n\n\n----------  LISTA DE NOMES SEM ORDENAÇÃO  -------------\n`);
+        imprimeA();
+        console.log(`\n\n\n----------  LISTA DE MATERIAS SEM ORDENAÇÃO  -------------\n`);
+        imprimeM();
+
+
+        console.log("\n\n\n----------  Lista de estudantes e suas maiores e menores notas  -------------\n\n");
+        mostrarResultadoFinalAlunos(listaNotasAlunos);
+        console.log(`\n\n\n----------  Lista de matérias e suas maiores e menores notas  -------------\n`);
+        mostrarResultadoFinalMateria(listaMateriasOrdenada);
+
+
+    </script>
+</body>
+
+</html>

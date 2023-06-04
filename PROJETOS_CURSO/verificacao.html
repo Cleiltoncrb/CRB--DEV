@@ -1,0 +1,80 @@
+<html>
+    <h1 id="nomeMilitar"></h1>
+    <h1></h1>
+</html>
+
+<script>
+   
+    var texto = `linha 1  linha 2`;
+
+
+    var minhaLista = [ { materia : 'Matematica',
+                         notas : [ // abre
+                                     { aluno : 'Fulano', nota: 4 },
+                                     { aluno : 'Ciclano', nota: 9 }
+                                 ]  // fecha
+                       }, 
+                       { materia : 'Física',
+                         notas : [ { aluno : 'Fulano', nota: 10 },
+                                   { aluno : 'Ciclano', nota: 9.9 } ] 
+                       },
+                       { materia : 'Artes',
+                         notas : [ { aluno : 'Fulano', nota: 6 },
+                                   { aluno : 'Ciclano', nota: 10 } ] 
+                       }];
+    
+    
+    var alunosAbaixoMedia = [];
+  
+    for(var i = 0; i < minhaLista.length; i++ ){
+        console.log(minhaLista[i].materia);
+
+        var media = 6;
+        var itemMateria = minhaLista[i];
+
+        var media = 6;
+        var itemMateria = minhaLista[i];
+
+        var alunosNotaMaxima = itemMateria.notas.filter( valorNota => valorNota.nota < 7 );
+        var nomesAlunos = [];
+        
+        alunosNotaMaxima.forEach(alunoNota => nomesAlunos.push(alunoNota.aluno));
+        
+        var alunoConcatenado = nomesAlunos.join(', ');
+
+        // for (let j = 0; j < itemMateria.notas.length; j++) {
+        //     var valorNota = itemMateria.notas[j];
+            
+        //     console.log('****' + valorNota.aluno + ' -  ' + valorNota.nota);
+            
+        //     // if(valorNota.nota < media){
+
+        //     //     // aluno
+        //     //     // nota 
+        //     //     // materia 
+
+        //     //     var alunoAbaixoMedia = { 
+        //     //         aluno : valorNota.aluno,
+        //     //         nota :  valorNota.nota,
+        //     //         materia: itemMateria.materia
+        //     //      };
+
+        // //         alunosAbaixoMedia.push(alunoAbaixoMedia);
+        // //     }
+
+           
+        // }
+
+        
+       // console.log('Abaixo da media:');
+        console.log(alunoConcatenado);
+
+
+    }
+
+
+
+
+
+   
+</script>
