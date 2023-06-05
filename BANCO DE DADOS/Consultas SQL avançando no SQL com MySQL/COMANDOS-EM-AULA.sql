@@ -181,6 +181,11 @@ ON A.MATRICULA = B.MATRICULA
 GROUP BY A.MATRICULA, A.NOME;
 
 -- ----------------------------------------------------------
+SELECT * FROM itens_notas_fiscais NF
+inner join tabela_de_produtos P
+ON NF.CODIGO_DO_PRODUTO = P.CODIGO_DO_PRODUTO;
+
+-- ----------------------------------------------------------
 SELECT A.MATRICULA, A.NOME, COUNT(*) FROM
 tabela_de_vendedores A, notas_fiscais B
 WHERE A.MATRICULA = B.MATRICULA
@@ -198,6 +203,9 @@ SELECT COUNT(*) FROM tabela_de_clientes;
 SELECT CPF, COUNT(*) FROM notas_fiscais GROUP BY CPF;
 SELECT DISTINCT A.CPF, A.NOME, B.CPF FROM tabela_de_clientes A INNER JOIN notas_fiscais B ON A.CPF = B.CPF;
 SELECT DISTINCT A.CPF, A.NOME, B.CPF FROM tabela_de_clientes A LEFT JOIN notas_fiscais B ON A.CPF = B.CPF;
+
+SELECT DISTINCT A.CPF, A.NOME, B.CPF FROM notas_fiscais B LEFT JOIN tabela_de_clientes A ON A.CPF = B.CPF;
+
 SELECT DISTINCT A.CPF, A.NOME, B.CPF FROM tabela_de_clientes A LEFT JOIN notas_fiscais B ON A.CPF = B.CPF WHERE B.CPF IS NULL;
 SELECT DISTINCT A.CPF, A.NOME, B.CPF FROM tabela_de_clientes A LEFT JOIN notas_fiscais B ON A.CPF = B.CPF WHERE B.CPF IS NULL AND YEAR(B.DATA_VENDA) = 2015;
 SELECT DISTINCT A.CPF, A.NOME, B.CPF FROM notas_fiscais B RIGHT JOIN tabela_de_clientes A ON A.CPF = B.CPF;
@@ -351,6 +359,62 @@ SELECT EMBALAGEM, avg(PRECO_DE_LISTA) as MAIOR_PRECO FROM tabela_de_produtos GRO
 
 -- 6 - Retorne as embalagens e somatorio dos preço por embalagem cuja soma dos preços por embalagem seja menor que 100
 select EMBALAGEM, sum(PRECO_DE_LISTA) AS SOMA_PRECOS FROM tabela_de_produtos GROUP BY EMBALAGEM HAVING SUM(PRECO_DE_LISTA) <= 100;
+
+
+SELECT DISTINCT A.CPF, A.NOME, B.CPF FROM tabela_de_clientes A LEFT JOIN notas_fiscais B ON A.CPF = B.CPF WHERE B.CPF IS NULL;
+
+select DISTINCT NOME_DO_PRODUTO, QUANTIDADE from itens_notas_fiscais F inner join tabela_de_produtos P where F.CODIGO_DO_PRODUTO = P.CODIGO_DO_PRODUTO order by NOME_DO_PRODUTO is null;
+
+select p.* from tabela_de_produtos p left join itens_notas_fiscais NF on p.CODIGO_DO_PRODUTO = NF.CODIGO_DO_PRODUTO where NF.CODIGO_DO_PRODUTO is null;
+
+
+
+
+-- 01 - Faça uma consulta que retorne apenas os produtos que NÃO foram vendidos.
+select p.CODIGO_DO_PRODUTO, NF.CODIGO_DO_PRODUTO as COD_NF, p.NOME_DO_PRODUTO, p.SABOR, count(*) 
+from tabela_de_produtos p 
+left join itens_notas_fiscais NF 
+on p.CODIGO_DO_PRODUTO = NF.CODIGO_DO_PRODUTO 
+where NF.CODIGO_DO_PRODUTO is null;
+
+-- 02
+SELECT P.CODIGO_DO_PRODUTO, P.NOME_DO_PRODUTO, count(nf.CODIGO_DO_PRODUTO) as QUANTIDADE_PRODUTOS_VENDIDOS
+FROM tabela_de_produtos P  
+left join itens_notas_fiscais NF
+ON P.CODIGO_DO_PRODUTO = NF.CODIGO_DO_PRODUTO
+GROUP BY p.CODIGO_DO_PRODUTO, p.NOME_DO_PRODUTO 
+order by QUANTIDADE desc;
+
+-- 03 - Faça uma consulta que retorne o valor TOTAL da Nota Fiscal 100. Ela deve ter Numero da nota e uma coluna com o TOTAL
+select NF.NUMERO AS NUMERO_NF, count(nf.NUMERO) AS QTD_TOTAL, sum(NF.PRECO) AS TOTAL_PRECO  FROM itens_notas_fiscais nf where NUMERO = '100';
+
+select * FROM itens_notas_fiscais where NUMERO = '100';
+
+-- 04 - Faça uma consulta que retorne: Numero da Nota Fiscal, Nome do produto, Quantidade do produto e o preço do produto. Retorne da nota fiscal 100;
+select NF.NUMERO, P.NOME_DO_PRODUTO, count(P.CODIGO_DO_PRODUTO) AS QTD_PRODUTOS, P.PRECO_DE_LISTA 
+FROM tabela_de_produtos P
+left join itens_notas_fiscais NF
+ON P.CODIGO_DO_PRODUTO = NF.CODIGO_DO_PRODUTO
+where NUMERO = '100';
+
+-- 5 - A partir do exercício 4, crie uma nova consulta com uma coluna que categorize o preço:
+-- Até 10: Barato;
+-- Maior que 10 e menor que 20 : Custo Benefício;
+-- Maior que 20 : Caro, prcure no Shopee;
+
+select * FROM itens_notas_fiscais where NUMERO = '100';
+
+SELECT PRECO,
+CASE 
+    WHEN PRECO <= 10 THEN 'BARATO'
+    WHEN PRECO > 10 AND PRECO < 20 THEN 'CUSTO BENEFICIO'
+    ELSE 'CARO, PROCURE NA SHOPEE' 
+    END AS CATEGORIA_DE_PRECO 
+FROM itens_notas_fiscais
+WHERE NUMERO = '100'
+ORDER BY PRECO;
+
+
 
 
 
