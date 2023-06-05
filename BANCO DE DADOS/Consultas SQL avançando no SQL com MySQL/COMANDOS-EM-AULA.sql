@@ -377,7 +377,7 @@ left join itens_notas_fiscais NF
 on p.CODIGO_DO_PRODUTO = NF.CODIGO_DO_PRODUTO 
 where NF.CODIGO_DO_PRODUTO is null;
 
--- 02
+-- 02 - Faça uma consulta que retorne os produtos (Codigo e Nome) e uma coluna com a quantidade de produtos vendidos. Ordene pela coluna de quantidade de forma decrescente.
 SELECT P.CODIGO_DO_PRODUTO, P.NOME_DO_PRODUTO, count(nf.CODIGO_DO_PRODUTO) as QUANTIDADE_PRODUTOS_VENDIDOS
 FROM tabela_de_produtos P  
 left join itens_notas_fiscais NF
@@ -386,16 +386,24 @@ GROUP BY p.CODIGO_DO_PRODUTO, p.NOME_DO_PRODUTO
 order by QUANTIDADE desc;
 
 -- 03 - Faça uma consulta que retorne o valor TOTAL da Nota Fiscal 100. Ela deve ter Numero da nota e uma coluna com o TOTAL
-select NF.NUMERO AS NUMERO_NF, count(nf.NUMERO) AS QTD_TOTAL, sum(NF.PRECO) AS TOTAL_PRECO  FROM itens_notas_fiscais nf where NUMERO = '100';
+select NF.NUMERO AS NUMERO_NF, count(nf.NUMERO) AS QTD_TOTAL, sum(NF.PRECO) AS TOTAL_PRECO  
+FROM itens_notas_fiscais nf 
+-- where NUMERO = 100
+group by NUMERO;
 
 select * FROM itens_notas_fiscais where NUMERO = '100';
 
 -- 04 - Faça uma consulta que retorne: Numero da Nota Fiscal, Nome do produto, Quantidade do produto e o preço do produto. Retorne da nota fiscal 100;
 select NF.NUMERO, P.NOME_DO_PRODUTO, count(P.CODIGO_DO_PRODUTO) AS QTD_PRODUTOS, P.PRECO_DE_LISTA 
 FROM tabela_de_produtos P
-left join itens_notas_fiscais NF
+inner join itens_notas_fiscais NF
 ON P.CODIGO_DO_PRODUTO = NF.CODIGO_DO_PRODUTO
-where NUMERO = '100';
+where nf.NUMERO = '100';
+
+SELECT nf.NUMERO AS Numero_Nota, p.NOME_DO_PRODUTO AS Nome_Produto, nf.QUANTIDADE AS Quantidade, nf.PRECO AS Preco
+FROM itens_notas_fiscais nf
+INNER JOIN tabela_de_produtos p ON nf.CODIGO_DO_PRODUTO = p.CODIGO_DO_PRODUTO
+WHERE nf.NUMERO = 100;
 
 -- 5 - A partir do exercício 4, crie uma nova consulta com uma coluna que categorize o preço:
 -- Até 10: Barato;
@@ -414,6 +422,17 @@ FROM itens_notas_fiscais
 WHERE NUMERO = '100'
 ORDER BY PRECO;
 
+
+
+select A.numero, B.nome_do_produto, A.quantidade, A.preco,
+case
+    when A.preco < 10 then 'Barato'
+    when A.preco >= 10 and A.preco < 20 then 'Custo Beneficio'
+    when A.preco > 20 then ' Caro, procure na Shopee'
+end as classificacao_preco
+from itens_notas_fiscais A inner join tabela_de_produtos B
+on a.codigo_do_produto = b.codigo_do_produto
+where A.numero = 100;
 
 
 

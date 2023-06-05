@@ -1,0 +1,212 @@
+Bom dia,
+
+Incumbiu-me a Senhora Chefe da SPE, informar ao efetivo que acrescente em todo Requerimento confeccionado no segundo parágrafo a seguinte frase:
+"E autorizo a tramitação eletrônica dos meus dados pessoais, pelos meios de Gerenciamento de Documentos utilizados no COMAER."
+
+Caso não haja a autorização da tramitação do documento, será devolvido ao militar.
+
+
+
+##################### GIT HUB #####################
+
+cleilton.oi18@gmail.com
+Clebr@crb29 - 19/05/2023
+
+git add .
+git commit -m "Descrição para o Commit"
+git push
+
+
+##################################################
+
+Férias
+https://docs.google.com/spreadsheets/d/1bALsCQfK9JyozSMqfXLduQLI0Kv9GT-GRk29uDYVT-k/edit#gid=0
+
+
+
+Rádio Verde Oliva: https://socialradio.com.br/radio/verdeolivabsb/
+
+Rádio FAB: https://www.fab.mil.br/radio
+
+
+
+EMTRADA: imap.mail.intraer 143
+SAIDA: smtp.mail.intraer 587
+
+"AP Cleilton - SEREP-BR" <cleiltoncrb@fab.mil.br>
+
+
+SIGADAER:
+SARAM: 7535848
+Senha: 3h69fSe7
+
+
+REDE:
+00666263159
+Clebr2933@
+
+
+
+Visual Studio Code
+Ctrl+shift+P =  para instalar pacotes 
+
+
+
+CCA - RJ
+2101-7900
+
+2101-7856
+
+
+Apresentação de Certidão de Nascimento -  Inclusão de Beneficiário
+
+Cópia da Certidão de Nascimento Autenticada 
+Cópia da Certidão de Casamento Autenticada 
+ANEXO A - NSCA 160-5 2022 
+
+Encaminho, para vossa apreciação.
+
+
+
+
+
+
+
+"A Zimbra disponibiliza o Chat básico, com mensagens somente entre usuários diretamente de maneira gratuita. Esse recurso é muito interessante para uma comunicação em tempo real. Como o recurso é implementado como um Zimlet, você pode controlar para quem deseja habilitar o recurso."  Referencia do artigo: https://pensandolinux.com.br/2022/01/04/zimbra-instalando-o-recurso-de-chat-ne-e-open-source/ 
+
+
+
+Passos para instalação do Chat são:
+
+yum install zimbra-drive zimbra-chat
+mv /opt/zimbra/lib/ext/openchat/zal.jar /tmp
+cp -rp /opt/zimbra/lib/ext/zimbradrive/zal.jar /opt/zimbra/lib/ext/openchat/zal.jar
+su - zimbra
+zmprov fc zimlet
+zmmailboxdctl restart
+
+
+
+Apresento ao Senhor a Certidão de Nascimento do meu filho, BERNARDO NOGUEIRA PEREIRA DA SILVA, e solicito providências no sentido de que ele seja incluído na minha Declaração de Beneficiário, na qualidade de FILHO, conforme o contido na documentação no anexo e o disposto no item 4.2.4.2 da ICA 47-4/2010 "Declaração de Beneficiários, tendo em vista que contribuo com 10,5% para a pensão militar.
+
+
+
+
+Prezados solicito a funcionalidade no SIGADAER para aprovação de Ofício (âmbito interno à OM).
+
+
+
+
+[GERENTE] - Boa tarde. Conforme solicitado as máquinas foram criadas. 
+
+Debian IP 192.168.60.36 
+Usuário: sddm 
+Senha: 123456 S@iccaBR
+
+
+(favor alterar a senha após o acesso) 
+
+OracleLinux IP 192.168.60.53 / 192.168.60.54 
+Usuário: oracle Senha: 0r4cl3 ( favor alterar após o acesso)
+
+
+
+Prezados favor liberar acesso SSH para os seguintes IPs (de Origem)
+
+Os servidores (Destino) vão necessitar de acesso a repositórios externos (Exemplo: Debian e Oracle), tendo em vista que será instalado algumas ferramentas como (Apache, elasticsearch, atualização do SO, etc) para testes.
+
+
+Ten Escórcio	IP: 10.228.101.142 - (Origem)
+Ten Kely Assis 	IP: 10.228.101.206 - (Origem)
+Ten Marcela  	IP: 10.228.101.133 - (Origem)
+Ten Cleilton 	IP: 10.228.101.135 - (Origem)
+
+Servidor OracleLinux IP 192.168.60.53 - (Destino)
+
+
+_____________________________________________________________
+
+
+Ten Cleilton 	IP: 10.228.101.135 - (Origem)
+Ten Portugal 	IP: 10.228.101.117 - (Origem)
+Ten Oliverio 	IP: 10.228.101.120 - (Origem)
+Ten Souza 		IP: 10.228.101.144 - (Origem)
+Ten Bueno 		IP: 10.228.101.141 - (Origem)
+Ten Nishiyama	IP: 10.228.101.181 - (Origem)
+Ten Damasceno	IP: 10.228.101.116 - (Origem)
+Ten Bezera		IP: 10.228.101.125 - (Origem)
+Ten Stefany		IP: 10.228.101.105 - (Origem)
+Ten Nobrega		IP: 10.228.101.143 - (Origem)
+Ten Giselli		IP: 10.228.101.129 - (Origem)
+
+Servidor Debian IP 192.168.60.36 e OracleLinux 192.168.60.54 - (Destino)
+
+
+
+
+
+grep kely /etc/passwd
+usermod -c "Marcela Silva" kely
+grep kely /etc/passwd
+
+
+grep kely /etc/shadow
+passwd kely			oraKelyA
+grep kely /etc/shadow
+
+
+
+
+
+grep marcela /etc/passwd
+usermod -c "Marcela Silva" marcela
+grep marcela /etc/passwd
+
+
+grep marcela /etc/shadow
+passwd marcela			MarSilvOra
+grep marcela /etc/shadow
+
+
+
+
+grep escorcio /etc/passwd
+usermod -c "Eduardo Escorcio" escorcio
+grep escorcio /etc/passwd
+
+
+grep escorcio /etc/shadow
+passwd escorcio			DuEscoOra
+grep escorcio /etc/shadow
+
+
+
+exit
+su - alice
+
+
+
+
+
+
+
+Debian IP 192.168.60.36 -- tyrion60-36
+Usuário: sddm 
+Senha: 123456 
+senha root: S@iccaBR
+
+
+root@tyrion60-36:/home/sddm#
+
+
+
+
+
+sudo apt-get install\ca-certificates\curl\gnupg
+
+
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.1.8.tar.gz
+
+
+
+wget https://dlcdn.apache.org/tomcat/tomcat-11/v11.0.0-M5/bin/apache-tomcat-11.0.0-M5.tar.gz 
