@@ -1,12 +1,31 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Titulo {
+import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException;
+import com.google.gson.annotations.SerializedName;
+
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
-    private double somaAvaliacoes;
+    private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
-    private int duracaiEmMinutos;
+    private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+
+        if (meuTituloOmdb.year().length() > 4 ){
+
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano poque tem mais de 04 caracteres");
+        }
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
+    }
 
     public String getNome() {
         return nome;
@@ -20,8 +39,12 @@ public class Titulo {
         return incluidoNoPlano;
     }
 
-    public int getDuracaiEmMinutos() {
-        return duracaiEmMinutos;
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
+    }
+
+    public int getTotalDeAvaliacoes() {
+        return totalDeAvaliacoes;
     }
 
     public void setNome(String nome) {
@@ -36,28 +59,35 @@ public class Titulo {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public void setDuracaiEmMinutos(int duracaiEmMinutos) {
-        this.duracaiEmMinutos = duracaiEmMinutos;
-    }
-
-    public int getTotalDeAvaliacoes() {
-        return totalDeAvaliacoes;
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
     public void exibeFichaTecnica() {
-        System.out.println("Nome do filme: " + this.nome);
-        System.out.println("Ano de lançamento: " + this.anoDeLancamento);
-        //System.out.println(""+this.duracaiEmMinutos);
+        System.out.println("Nome do filme: " + nome);
+        System.out.println("Ano de lançamento: " + anoDeLancamento);
     }
 
     public void avalia(double nota) {
-        somaAvaliacoes += nota;
+        somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
     }
 
     public double pegaMedia() {
-        return somaAvaliacoes / totalDeAvaliacoes;
+        return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
 
+    @Override
+    public String toString() {
+        return
+                "{nomeDoFilme = " + nome
+                        + ", anoDeLancamento = " + anoDeLancamento
+                        + ", "
+                        + "duração = " + duracaoEmMinutos + '}';
+    }
 }
