@@ -64,3 +64,35 @@ https://cursos.alura.com.br/formacao-spring-boot-3
 
 
 https://cursos.alura.com.br/course/javascript-web-armazenando-dados-navegador/task/101505
+
+
+
+
+
+#################################### - JPA - #####################################################################
+
+
+
+<persistence-unit name="loja" transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://${MYSQL_HOST:localhost}:3306/sucos_vendas" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            
+            
+        </properties>
+    </persistence-unit>
+ 
+ 
+ 
+################################################## - pom.xml - ##################################################
+		
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
