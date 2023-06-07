@@ -12,8 +12,10 @@ Caso não haja a autorização da tramitação do documento, será devolvido ao 
 cleilton.oi18@gmail.com
 Clebr@crb29 - 19/05/2023
 
+
+cd C:/Users/00666263159/Documents/CLEILTON__CCA-BR/CRB--DEV
 git add .
-git commit -m "Descrição para o Commit"
+git commit -m "Atualização (JS e JAVA)"
 git push
 
 

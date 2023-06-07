@@ -1,6 +1,7 @@
 
 
 -- Ctrl + B para identar 
+-- COMENTAR LINHA trl + /                   (a barra de divisão)
 
 -- #######################-- TB_CLINTES --#############################################
 SELECT * FROM tabela_de_clientes;
@@ -264,6 +265,31 @@ DE_FERIAS,
 tabela_de_clientes.BAIRRO,
 tabela_de_clientes.NOME FROM tabela_de_vendedores, tabela_de_clientes; -- CROSS JOIN
 
+
+-- ----------------------------------------------------------------------------
+-- Podemos simular o FULL JOIN, que não é suportado pelo MYSQL, usando o LEFT JOIN e RIGHT JOIN com UNION. Digite:
+SELECT 
+    tabela_de_vendedores.BAIRRO,
+    tabela_de_vendedores.NOME,
+    DE_FERIAS,
+    tabela_de_clientes.BAIRRO,
+    tabela_de_clientes.NOME
+FROM
+    tabela_de_vendedores
+        LEFT JOIN
+    tabela_de_clientes ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO 
+UNION SELECT 
+    tabela_de_vendedores.BAIRRO,
+    tabela_de_vendedores.NOME,
+    DE_FERIAS,
+    tabela_de_clientes.BAIRRO,
+    tabela_de_clientes.NOME
+FROM
+    tabela_de_vendedores
+        RIGHT JOIN
+    tabela_de_clientes ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
+
+
 -- ------------------------ UNIOR ----------------------------------
 SELECT DISTINCT BAIRRO FROM tabela_de_clientes;
 SELECT DISTINCT BAIRRO FROM tabela_de_vendedores;
@@ -434,6 +460,423 @@ from itens_notas_fiscais A inner join tabela_de_produtos B
 on a.codigo_do_produto = b.codigo_do_produto
 where A.numero = 100;
 
+-- -------------------- VIEW --------------------------------------
+
+SELECT 
+    EMBALAGEM, MAX(PRECO_DE_LISTA) AS MAIOR_PRECO
+FROM
+    tabela_de_produtos
+GROUP BY EMBALAGEM;
+
+-- ----------------------------------------------------------------------------
+SELECT 
+    X.EMBALAGEM, X.MAIOR_PRECO
+FROM
+    vw_maiores_embalagens X
+WHERE
+    X.MAIOR_PRECO >= 10;
+
+-- ----------------------------------------------------------------------------
+SELECT 
+    X.EMBALAGEM, X.MAIOR_PRECO
+FROM
+    vw_maiores_embalagens X
+WHERE
+    X.MAIOR_PRECO >= 10;
+
+-- ----------------------------------------------------------------------------
+SELECT 
+    A.NOME_DO_PRODUTO,
+    A.EMBALAGEM,
+    A.PRECO_DE_LISTA,
+    X.MAIOR_PRECO
+FROM
+    tabela_de_produtos A
+INNER JOIN
+    vw_maiores_embalagens X ON A.EMBALAGEM = X.EMBALAGEM;
+    
+-- ----------------------------------------------------------------------------
+SELECT 
+    A.NOME_DO_PRODUTO,
+    A.EMBALAGEM,
+    A.PRECO_DE_LISTA,
+    X.MAIOR_PRECO,
+    ((A.PRECO_DE_LISTA / X.MAIOR_PRECO) - 1) * 100 AS PERCENTUAL
+FROM
+    tabela_de_produtos A
+        INNER JOIN
+    vw_maiores_embalagens X ON A.EMBALAGEM = X.EMBALAGEM;
+
+
+-- ------------------------- Funções de string ---------------------------------------------------
+SELECT CONCAT("SQL ", "Tutorial ", "is ", "fun!") AS Concatena_String; 
+
+SELECT LTRIM("     SQL Tutorial") AS TIRANDO_ESPACOS_DA_ESQUERDA_COM_LTRIM;
+
+SELECT RTRIM("SQL Tutorial     ") AS TIRANDO_ESPACOS_DA_DIREITA_COM_RTRIM;
+
+SELECT TRIM('    SQL Tutorial    ') AS TIRANDO_ESPACOS_DA_DIREITA_E_DIREITA_COM_TRIM;
+
+SELECT LCASE("SQL Tutorial is FUN!"); --  transforma um texto minúsculas
+SELECT LOWER("SQL Tutorial is FUN!"); --  transforma um texto minúsculas
+
+SELECT UCASE("SQL Tutorial is FUN!"); --  transforma um texto maiúsculas
+SELECT UPPER("SQL Tutorial is FUN!"); --  transforma um texto maiúsculas
+
+SELECT SUBSTRING("SQL Tutorial", 5, 3) AS ExtractString; -- RESULTADO = Tut; retirar um pedaço de texto de dentro de uma string maior. 
+SELECT SUBSTRING('OLÁ, TUDO BEM?', 6, 4) AS RESULTADO; -- RESULTADO = TUDO
+
+SELECT LENGTH("SQL Tutorial") AS LengthOfString; -- retorna o tamanho de uma string:
+
+SELECT CONCAT(NOME, ' (', CPF, ') ') AS RESULTADO FROM TABELA_DE_CLIENTES;
+
+-- Faça uma consulta listando o nome do cliente e o endereço completo (Com rua, bairro, cidade e estado).
+SELECT NOME, CONCAT(ENDERECO_1, ' ', BAIRRO, ' ', CIDADE, ' ', ESTADO) AS COMPLETO FROM tabela_de_clientes;
+
+
+-- ------------------------- Funções de datas ---------------------------------------------------
+SELECT ADDDATE("2017-06-15", INTERVAL 10 DAY);
+
+SELECT ADDTIME("2017-06-15 09:34:21", "2");
+
+SELECT CURDATE();
+
+SELECT CURRENT_TIMESTAMP();
+
+SELECT DATEDIFF("2017-06-25", "2017-06-15");
+
+SELECT DAYNAME("2017-06-15");
+SELECT MONTHNAME("2017-06-15");
+
+SELECT DAY("2017-06-15");
+SELECT MONTH("2017-06-15");
+
+SELECT CURDATE();
+SELECT CURRENT_TIME();
+SELECT CURRENT_TIMESTAMP();
+
+SELECT YEAR(CURRENT_TIMESTAMP());
+SELECT MONTH(CURRENT_TIMESTAMP());
+SELECT DAY(CURRENT_TIMESTAMP());
+
+SELECT MONTHNAME(CURRENT_TIMESTAMP());
+
+SELECT DATEDIFF(CURRENT_TIMESTAMP(), '2019-01-01') AS RESULTADO;
+
+
+SELECT DATEDIFF(CURRENT_TIMESTAMP(), '2022-10-17') AS RESULTADO;
+
+SELECT CURRENT_TIMESTAMP() AS DIA_HOJE, DATE_SUB(CURRENT_TIMESTAMP(), INTERVAL 5 DAY) AS RESULTADO;
+
+SELECT DISTINCT DATA_VENDA FROM NOTAS_FISCAIS;
+SELECT DISTINCT DATA_VENDA,
+DAYNAME(DATA_VENDA) AS DIA, MONTHNAME(DATA_VENDA) AS MES, YEAR(DATA_VENDA) AS ANO FROM NOTAS_FISCAIS;
+
+
+-- Crie uma consulta que mostre o nome e a idade atual dos clientes.
+SELECT 
+    NOME,
+    TIMESTAMPDIFF(YEAR,
+        DATA_DE_NASCIMENTO,
+        CURDATE()) AS IDADE
+FROM
+    tabela_de_clientes;
+
+
+-- -------------------------- Funções matemáticas --------------------------------------------------
+SELECT (23+((25-2)/2)*45) AS RESULTADO;
+
+SELECT CEILING(12.33333232323) AS RESULTADO;
+
+SELECT ROUND(12.33333232323) AS RESULTADO;
+SELECT ROUND(12.7777232323) AS RESULTADO;
+
+SELECT FLOOR(12.7777232323) AS RESULTADO;
+
+SELECT RAND() AS RESULTADO; 
+
+SELECT NUMERO, QUANTIDADE, PRECO FROM ITENS_NOTAS_FISCAIS;
+
+SELECT NUMERO, QUANTIDADE, PRECO, QUANTIDADE * PRECO AS FATURAMENTO FROM ITENS_NOTAS_FISCAIS;
+
+ SELECT NUMERO, QUANTIDADE, PRECO, ROUND(QUANTIDADE * PRECO, 2) AS FATURAMENTO FROM ITENS_NOTAS_FISCAIS;
+
+
+-- Na tabela de notas fiscais temos o valor do imposto. Já na tabela de itens temos a quantidade e o faturamento. Calcule o valor do imposto pago no ano de 2016 arredondando para o menor inteiro.
+SELECT YEAR(DATA_VENDA) AS ANO_VENDAS, FLOOR(SUM(IMPOSTO * (QUANTIDADE * PRECO))) AS VALOR_IMPOSTO
+FROM notas_fiscais NF
+INNER JOIN itens_notas_fiscais INF ON NF.NUMERO = INF.NUMERO
+WHERE YEAR(DATA_VENDA) = 2016
+GROUP BY YEAR(DATA_VENDA);
+
+-- ------------------------- Conversão de dados ---------------------------------------------------
+SELECT CURRENT_TIMESTAMP() AS RESULTADO;
+
+SELECT CONCAT('O dia de hoje é: ', CURRENT_TIMESTAMP()) AS RESULTADO;
+
+SELECT CONCAT('O dia de hoje é: ', DATE_FORMAT(CURRENT_TIMESTAMP(),'%Y') ) AS RESULTADO;
+
+SELECT CONCAT('O dia de hoje é: ', DATE_FORMAT(CURRENT_TIMESTAMP(),'%y') ) AS RESULTADO;
+
+SELECT CONCAT('O dia de hoje é: ', DATE_FORMAT(CURRENT_TIMESTAMP(),'%m/%y') ) AS RESULTADO;
+
+SELECT CONCAT('O dia de hoje é: ', DATE_FORMAT(CURRENT_TIMESTAMP(),'%d/%m/%Y') ) AS RESULTADO;
+
+SELECT CONCAT('O dia de hoje é: ', DATE_FORMAT(CURRENT_TIMESTAMP(),'%W, %d/%m/%Y') ) AS RESULTADO;
+
+SELECT CONCAT('O dia de hoje é: ', DATE_FORMAT(CURRENT_TIMESTAMP(),'%d/%m/%Y - %U') ) AS RESULTADO;
+
+SELECT CONVERT(23.3, CHAR) AS RESULTADO;
+
+SELECT SUBSTRING(CONVERT(23.3, CHAR),1,1) AS RESULTADO;
+
+-- Queremos construir um SQL cujo resultado seja, para cada cliente:
+-- 			“O cliente João da Silva faturou 120000 no ano de 2016”.
+-- 			Somente para o ano de 2016.
+SELECT 
+    CONCAT('O cliente ',
+            TC.NOME,
+            ' faturou ',
+            CAST(SUM(INF.QUANTIDADE * INF.preco) AS CHAR (20)),
+            ' no ano ',
+            CAST(YEAR(NF.DATA_VENDA) AS CHAR (20))) AS SENTENCA
+FROM
+    notas_fiscais NF
+        INNER JOIN
+    itens_notas_fiscais INF ON NF.NUMERO = INF.NUMERO
+        INNER JOIN
+    tabela_de_clientes TC ON NF.CPF = TC.CPF
+WHERE
+    YEAR(DATA_VENDA) = 2016
+GROUP BY TC.NOME , YEAR(DATA_VENDA);
+
+-- ---------------------------------------------------------------------------------------------
+
+SELECT * FROM ITENS_NOTAS_FISCAIS;
+SELECT * FROM NOTAS_FISCAIS;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT * FROM NOTAS_FISCAIS NF INNER JOIN ITENS_NOTAS_FISCAIS INF ON NF.NUMERO = INF.NUMERO;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT NF.CPF, NF.DATA_VENDA, INF.QUANTIDADE FROM NOTAS_FISCAIS NF
+INNER JOIN ITENS_NOTAS_FISCAIS INF
+ON NF.NUMERO = INF.NUMERO;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT NF.CPF, DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO, INF.QUANTIDADE FROM NOTAS_FISCAIS NF
+INNER JOIN ITENS_NOTAS_FISCAIS INF
+ON NF.NUMERO = INF.NUMERO;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT NF.CPF, DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO, SUM(INF.QUANTIDADE) AS QUANTIDADE_VENDAS FROM NOTAS_FISCAIS NF
+INNER JOIN ITENS_NOTAS_FISCAIS INF
+ON NF.NUMERO = INF.NUMERO
+GROUP BY NF.CPF, DATE_FORMAT(NF.DATA_VENDA, '%Y-%m');
+
+/* CONSULTA COM VENDAS DE CLIENTES POR MES */
+SELECT * FROM TABELA_DE_CLIENTES TC;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT TC.CPF, TC.NOME, TC.VOLUME_DE_COMPRA AS QUANTIDADE_LIMITE
+FROM TABELA_DE_CLIENTES TC;
+
+/* LIMITE DE COMPRA POR CLIENTE */
+SELECT TC.CPF, TC.NOME, TC.VOLUME_DE_COMPRA AS QUANTIDADE_LIMITE
+FROM TABELA_DE_CLIENTES TC;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT 
+    NF.CPF,
+    TC.NOME,
+    DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO,
+    SUM(INF.QUANTIDADE) AS QUANTIDADE_VENDAS,
+    TC.VOLUME_DE_COMPRA AS QUANTIDADE_LIMITE
+FROM
+    NOTAS_FISCAIS NF
+        INNER JOIN
+    ITENS_NOTAS_FISCAIS INF ON NF.NUMERO = INF.NUMERO
+        INNER JOIN
+    TABELA_DE_CLIENTES TC ON TC.CPF = NF.CPF
+GROUP BY NF.CPF , TC.NOME , DATE_FORMAT(NF.DATA_VENDA, '%Y-%m');
+
+-- ---------------------------------------------------------------------------------------------
+SELECT 
+    NF.CPF,
+    TC.NOME,
+    DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO,
+    SUM(INF.QUANTIDADE) AS QUANTIDADE_VENDAS,
+    MAX(TC.VOLUME_DE_COMPRA) AS QUANTIDADE_LIMITE
+FROM
+    NOTAS_FISCAIS NF
+        INNER JOIN
+    ITENS_NOTAS_FISCAIS INF ON NF.NUMERO = INF.NUMERO
+        INNER JOIN
+    TABELA_DE_CLIENTES TC ON TC.CPF = NF.CPF
+GROUP BY NF.CPF , TC.NOME , DATE_FORMAT(NF.DATA_VENDA, '%Y-%m');
+
+-- ---------------------------------------------------------------------------------------------
+SELECT X.CPF, X.NOME, X.MES_ANO, X.QUANTIDADE_VENDAS, X.QUANTIDADE_LIMITE,
+X.QUANTIDADE_LIMITE - X.QUANTIDADE_VENDAS AS DIFERENCA
+FROM (
+SELECT NF.CPF, TC.NOME, DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO, 
+SUM(INF.QUANTIDADE) AS QUANTIDADE_VENDAS , MAX(TC.VOLUME_DE_COMPRA) AS QUANTIDADE_LIMITE FROM NOTAS_FISCAIS NF
+INNER JOIN ITENS_NOTAS_FISCAIS INF
+ON NF.NUMERO = INF.NUMERO
+INNER JOIN TABELA_DE_CLIENTES TC 
+ON TC.CPF = NF.CPF
+GROUP BY NF.CPF, TC.NOME, DATE_FORMAT(NF.DATA_VENDA, '%Y-%m')) X;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT 
+    X.CPF,
+    X.NOME,
+    X.MES_ANO,
+    X.QUANTIDADE_VENDAS,
+    X.QUANTIDADE_LIMITE,
+    X.QUANTIDADE_LIMITE - X.QUANTIDADE_VENDAS AS DIFERENCA,
+    CASE
+        WHEN (X.QUANTIDADE_LIMITE - X.QUANTIDADE_VENDAS) < 0 THEN 'INVÁLIDA'
+        ELSE 'VÁLIDA'
+    END AS STATUS_VENDA
+FROM
+    (SELECT 
+        NF.CPF,
+            TC.NOME,
+            DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO,
+            SUM(INF.QUANTIDADE) AS QUANTIDADE_VENDAS,
+            MAX(TC.VOLUME_DE_COMPRA) AS QUANTIDADE_LIMITE
+    FROM
+        NOTAS_FISCAIS NF
+    INNER JOIN ITENS_NOTAS_FISCAIS INF ON NF.NUMERO = INF.NUMERO
+    INNER JOIN TABELA_DE_CLIENTES TC ON TC.CPF = NF.CPF
+    GROUP BY NF.CPF , TC.NOME , DATE_FORMAT(NF.DATA_VENDA, '%Y-%m')) X;
+
+-- ---------------------------------------------------------------------------------------------
+SELECT X.CPF, X.NOME, X.MES_ANO, X.QUANTIDADE_VENDAS, X.QUANTIDADE_LIMITE,
+CASE 
+    WHEN (X.QUANTIDADE_LIMITE - X.QUANTIDADE_VENDAS) < 0 THEN 'INVÁLIDA'
+    ELSE 'VÁLIDA' 
+END AS STATUS_VENDA
+FROM (
+SELECT NF.CPF, TC.NOME, DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO, 
+SUM(INF.QUANTIDADE) AS QUANTIDADE_VENDAS , 
+MAX(TC.VOLUME_DE_COMPRA) AS QUANTIDADE_LIMITE FROM NOTAS_FISCAIS NF
+INNER JOIN ITENS_NOTAS_FISCAIS INF
+ON NF.NUMERO = INF.NUMERO
+INNER JOIN TABELA_DE_CLIENTES TC 
+ON TC.CPF = NF.CPF
+GROUP BY NF.CPF, TC.NOME, DATE_FORMAT(NF.DATA_VENDA, '%Y-%m')) X;
+
+
+-- ---------------------------------------------------------------------------------------------
+SELECT 
+    X.CPF,
+    X.NOME,
+    X.MES_ANO,
+    X.QUANTIDADE_VENDAS,
+    X.QUANTIDADE_LIMITE,
+    CASE
+        WHEN (X.QUANTIDADE_LIMITE - X.QUANTIDADE_VENDAS) < 0 THEN 'INVÁLIDA'
+        ELSE 'VÁLIDA'
+    END AS STATUS_VENDA,
+    (1 - (X.QUANTIDADE_LIMITE / X.QUANTIDADE_VENDAS)) * 100 AS PERCENTUAL
+FROM
+    (SELECT 
+        NF.CPF,
+            TC.NOME,
+            DATE_FORMAT(NF.DATA_VENDA, '%Y-%m') AS MES_ANO,
+            SUM(INF.QUANTIDADE) AS QUANTIDADE_VENDAS,
+            MAX(TC.VOLUME_DE_COMPRA) AS QUANTIDADE_LIMITE
+    FROM
+        NOTAS_FISCAIS NF
+    INNER JOIN ITENS_NOTAS_FISCAIS INF ON NF.NUMERO = INF.NUMERO
+    INNER JOIN TABELA_DE_CLIENTES TC ON TC.CPF = NF.CPF
+    GROUP BY NF.CPF , TC.NOME , DATE_FORMAT(NF.DATA_VENDA, '%Y-%m')) X
+WHERE
+    (X.QUANTIDADE_LIMITE - X.QUANTIDADE_VENDAS) < 0;
+
+
+
+
+-- ---------------------------------------------------------------------------------------------
+-- 1 -  Faça duas consultas e use o Union. 
+--         a - Retorne os produtos da embalagem PET
+--         b - Retorne os produtos da embalagem Garrafa;
+
+select * FROM tabela_de_produtos WHERE EMBALAGEM = 'PET'
+UNION
+select * FROM tabela_de_produtos WHERE EMBALAGEM = 'GARRAFA'
+;
+
+
+-- 2 - Faça duas consultas e use o Union. 
+--         a - Retorne os produtos de valor menor que 15
+--         b - Retorne os produtos da valor maior ou igual a 15;
+--         c - Adicione uma coluna com valor fixo: BARATO e CARO para CATEGORIA de PREÇO
+
+SELECT DISTINCT NOME_DO_PRODUTO, PRECO_DE_LISTA, 'BARATO' as CATEGORIA_PREÇO FROM tabela_de_produtos WHERE PRECO_DE_LISTA < 15
+UNION
+SELECT DISTINCT NOME_DO_PRODUTO, PRECO_DE_LISTA, 'CARO' as CATEGORIA_PREÇO FROM tabela_de_produtos WHERE PRECO_DE_LISTA >= 15 ;
+
+-- 3 - Faça duas consultas e use union:
+--         a - Retorne Nome e Matricula de vendedor dos vendedores que NÃO realizaram
+--             vendas - NÃO use COUNT;
+SELECT V.NOME, V.MATRICULA,'ZERO' AS QTD_VENDAS FROM tabela_de_vendedores V  
+LEFT JOIN notas_fiscais NF
+ON V.MATRICULA = NF.MATRICULA
+WHERE DATA_VENDA IS NULL;
+
+--         b - Crie uma coluna (Quantidade de Vendas) com o valor fixo 0 (ZERO) 
+--             na primeira consulta;
+SELECT DISTINCT V.NOME, V.MATRICULA, COUNT(NF.DATA_VENDA) AS QTD_VENDAS FROM tabela_de_vendedores V
+LEFT JOIN notas_fiscais NF
+ON V.MATRICULA = NF.MATRICULA ;
+--         c - Retorne Nome, Matricula e Quantidade de Vendas dos vendedores que 
+--             REALIZARAM     vendas.
+
+
+SELECT 
+    V.NOME, V.MATRICULA, 0 AS QUANTIDADE_DE_VENDAS
+FROM
+    tabela_de_vendedores V
+        LEFT JOIN
+    notas_fiscais F ON V.MATRICULA = F.MATRICULA
+WHERE
+    F.MATRICULA IS NULL 
+UNION SELECT 
+    V.NOME,
+    V.MATRICULA,
+    COUNT(F.MATRICULA) AS QUANTIDADE_DE_VENDAS
+FROM
+    tabela_de_vendedores v
+        INNER JOIN
+    notas_fiscais F ON V.MATRICULA = F.MATRICULA
+GROUP BY V.NOME , V.MATRICULA;
+
+
+
+SELECT DISTINCT V.NOME, V.MATRICULA,COUNT(NF.DATA_VENDA) AS QTD_VENDAS FROM tabela_de_vendedores V  
+LEFT JOIN notas_fiscais NF
+ON V.MATRICULA = NF.MATRICULA
+-- WHERE NF.DATA_VENDA IS NULL
+GROUP BY NF.DATA_VENDA;
+
+
+
+
+SELECT * FROM tabela_de_vendedores;
+SELECT * FROM tabela_de_vendedores WHERE MATRICULA = 00235;
+SELECT * FROM notas_fiscais;
+
+
+SELECT DISTINCT * FROM tabela_de_vendedores V
+left JOIN notas_fiscais NF
+ON V.MATRICULA = NF.MATRICULA
+union
+SELECT DISTINCT * FROM tabela_de_vendedores V
+RIGHT JOIN notas_fiscais NF
+ON V.MATRICULA = NF.MATRICULA;
 
 
 
@@ -442,14 +885,4 @@ where A.numero = 100;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+-- ---------------------------------------------------------------------------------------------
