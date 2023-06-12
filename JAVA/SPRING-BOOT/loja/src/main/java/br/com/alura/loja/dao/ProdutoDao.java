@@ -46,8 +46,8 @@ public class ProdutoDao {
 	}
 	
 	public List<Produto> busarPorNomeDaCategoria(String nome) {
-		String jpql = "SELECT p FROM Produto p WHERE p.categoria.nome = :nome";// p.nome é o nome do atributo e não da coluna da tabela 
-		return em.createQuery(jpql, Produto.class)
+		// p.nome é o nome do atributo e não da coluna da tabela 
+		return em.createQuery("Produto.produtosPorCateria", Produto.class)
 				.setParameter("nome", nome)
 				.getResultList();
 	}

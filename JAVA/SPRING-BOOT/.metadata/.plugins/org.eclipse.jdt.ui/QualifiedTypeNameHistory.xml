@@ -3,12 +3,10 @@
     <fullyQualifiedTypeName name="java.text.ParseException"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="bytebank.Conta"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="screenmatch.Filme"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.multi.MultiButtonUI"/>
     <fullyQualifiedTypeName name="oficina_mecanica.Oficina"/>
     <fullyQualifiedTypeName name="oficina_mecanica.Veiculo"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="javax.persistence.Table"/>
     <fullyQualifiedTypeName name="br.com.alura.loja.dao.ProdutoDao"/>
     <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
@@ -21,14 +19,21 @@
     <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
     <fullyQualifiedTypeName name="br.com.alura.loja.modelo.Cliente"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="br.com.alura.loja.modelo.Pedido"/>
-    <fullyQualifiedTypeName name="br.com.alura.loja.modelo.ItemPedido"/>
     <fullyQualifiedTypeName name="br.com.alura.loja.dao.PedidoDao"/>
     <fullyQualifiedTypeName name="br.com.alura.loja.dao.ClienteDao"/>
     <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="org.hibernate.internal.build.AllowSysOut"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.com.alura.loja.modelo.ItemPedido"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
+    <fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
 </qualifiedTypeNameHistroy>
