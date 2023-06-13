@@ -16,11 +16,11 @@
 		<item value="org.eclipse.jgit.ssh.apache:6.5.0.202303070854-r"/>
 		<item value="org.eclipse.jgit:6.5.0.202303070854-r"/>
 		<item value="org.eclipse.jst.common.fproj.enablement.jdt:3.29.0.v202301170743"/>
-		<item value="org.eclipse.justj.openjdk.hotspot.jre.full:17.0.5.v20221102-0933"/>
+		<item value="org.eclipse.justj.openjdk.hotspot.jre.full:19.0.1.v20221102-1007"/>
 		<item value="org.eclipse.m2e.feature:2.2.1.20230307-1553"/>
 		<item value="org.eclipse.m2e.logback.feature:2.1.1.20230106-1511"/>
 		<item value="org.eclipse.m2e.wtp.feature:1.6.0.20230118-0812"/>
-		<item value="org.eclipse.mylyn.wikitext.editors_feature:3.0.46.202301111837"/>
+		<item value="org.eclipse.mylyn.wikitext.editors_feature:3.0.47.202305042122"/>
 		<item value="org.eclipse.pde:3.14.1500.v20230302-0300"/>
 		<item value="org.eclipse.platform:4.27.0.v20230302-0300"/>
 		<item value="org.eclipse.rcp:4.27.0.v20230302-0300"/>
@@ -61,6 +61,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\00666263159\Documents\CLEILTON__CCA-BR\CRB--DEV\JAVA\INTELLI-J\screenmatch_web_spring"/>
 			<item value="C:\Users\00666263159\Documents\CLEILTON__CCA-BR\CRB--DEV\JAVA\SPRING-BOOT\screenmatch_web_spring"/>
 		</list>
 	</section>
