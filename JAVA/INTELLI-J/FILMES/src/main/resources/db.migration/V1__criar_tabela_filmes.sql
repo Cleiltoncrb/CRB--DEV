@@ -6,3 +6,5 @@ ano_lancamento int not null,
 genero varchar(100),
 primary key(id)
 );
+
+select * from filmes;
