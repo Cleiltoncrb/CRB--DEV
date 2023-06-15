@@ -4,9 +4,9 @@ import br.com.alura.screenmatch.domain.filme.DadosAlteracaoFilme;
 import br.com.alura.screenmatch.domain.filme.DadosCadastroFilme;
 import br.com.alura.screenmatch.domain.filme.Filme;
 import br.com.alura.screenmatch.domain.filme.FilmeRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
