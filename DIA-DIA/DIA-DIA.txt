@@ -16,7 +16,7 @@ Clebr@crb29 - 19/05/2023
 cd C:/Users/00666263159/Documents/CLEILTON__CCA-BR/CRB--DEV
 git pull
 git add .
-git commit -m "Atualização (JAVA - projeto FILMES)"
+git commit -m "Atualização (JAVA - projeto MEDICOS)"
 git push
 
 
