@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afcb23f3-9fbe-41b5-89a5-fd7fe19a9605" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oncar/src/main/java/br/com/oncar/controller/OncarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oncar/src/main/resources/templates/DOC-PROJETO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LPI---AutoTech-m-oo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LPI---AutoTech-m-oo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LPI---AutoTech-m-oo/src/main/java/com/autotech/daos/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LPI---AutoTech-m-oo/src/main/java/com/autotech/daos/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LPI---AutoTech-m-oo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../LPI---AutoTech-m-oo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +20,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\00666263159\Documents\CLEILTON__CCA-BR\CRB--DEV\JAVA\INTELLI-J\repository" />
+        <option name="userSettingsFile" value="C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SOFTWARES\apache-maven-3.8.7\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2Q9nJJNvMas51NBMmOxB8WFD9Wu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -29,7 +40,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/00666263159/Documents/CLEILTON__CCA-BR/CRB--DEV/JAVA/INTELLI-J/br.com.laura.loja&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

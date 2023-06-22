@@ -1,0 +1,40 @@
+Trabalho em dupla;
+
+Equipes:
+
+Nishiyama e Nobrega
+Damasceno e Bezerra;
+Oliverio e Bueno;
+Cleilton e Gizelly;
+Souza e Stefanny;
+
+
+1) Utilizar Projeto anterior para a criação do novo projeto, aproveitando o diagrama de classes utlizado.
+Projeto Anterior: Ex.: na foto abaixo...
+
+
+
+2)Identifique as entidades relevantes para o sistema, seus atributos e relacionamentos.
+
+
+3)Utilize o mapeamento objeto-relacional (ORM), como o Spring Data JPA, para mapear as entidades em classes de modelo e permitir a persistência no banco de dados. Ex.:@Emmbedded, @Embeddable, @ManyToMany, OneToMany, @Eazyer, @Lager...
+
+4) O Spring Boot é baseado no padrão arquitetural MVC (Model-View-Controller). Para organizar adequadamente o projeto, crie os pacotes correspondentes a cada componente do MVC.
+Estrutura dos Pacotes do projeto:
+a. Model: Este pacote conterá as classes de modelo(tabelas do banco de dados), que representam as entidades mapeadas no banco de dados.
+b. Controller: Este pacote conterá as classes de controladores, responsáveis por receber as requisições HTTP e gerenciar as ações do sistema.
+c. Repository: Este pacote conterá as interfaces de repositório, que definem os métodos de acesso e manipulação dos dados no banco de dados.
+d. Além dos pacotes do MVC, você pode criar outros pacotes, como serviços (service), utilitários (util) ou exceções (exception), para organizar outras camadas, funcionalidades do sistema ou regras de negocio.
+
+
+5) Utilize o thymeleaf para criar páginas HTML dinâmicas com Spring Boot, permitindo a integração dos dados do servidor com a renderização das páginas HTML e CSS.
+
+
+
+6) Procure pesquisar e entender nas documentações/sites sobre as funcionalidades de cada anotação do SpringBoot;
+
+
+7) Colocar projeto no Github(versionamento);
+
+8)Prazo para entrega: em aberto...
+Exemplo de diagrama a ser utilizado
