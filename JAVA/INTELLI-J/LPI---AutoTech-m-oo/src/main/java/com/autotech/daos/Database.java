@@ -7,8 +7,12 @@ import java.sql.SQLException;
 public class Database {
 
     public static Connection getConexao() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/autotech?user=root&password=";
-        Connection conexao = DriverManager.getConnection(url);
+
+        String url = "jdbc:mysql://localhost:3306?useTimezone=true&serverTimezone=UTC";
+        String usuario = "root";
+        String senha = "root";
+
+        Connection conexao = DriverManager.getConnection(url, usuario, senha);
         return conexao;
     }
 }

@@ -1,0 +1,110 @@
+/* RESET */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600&family=Poppins:wght@200;500;900&display=swap');
+{
+    margin:0;
+    padding:0;
+   box-sizing: border-box;
+   font-family: 'inter',sans-serif;
+}
+
+ body {
+    width:95%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0c0ce94d;
+
+
+}
+.container {
+  width: 80%;
+  height: 80vh;
+  display: flex;
+ box-shadow: 2px 2px 5px rgba(0,0,0, .212);
+
+}
+
+.form-image {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fde3a7d7;
+    padding: 1rem
+}
+
+.form-image img {
+    width: 33rem;
+}
+
+.form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 5rem;
+}
+
+.form-header {
+    margin-bottom: 10rem;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+
+
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-box input {
+    margin: 0.9rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box label {
+    font-size: 0.90rem;
+    font-weight: 1000;
+    color: #0047AB;
+}
+.cadastrar-button button {
+  width: 100%;
+  margin-top: 2.5rem;
+  background-color: #00008B;
+  padding: 0.62rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight:500;
+  color:#fff;
+}
+.form-header title h1 {
+     background-color: #00008B;
+}
+
+
+
+
+
+
+
+
+

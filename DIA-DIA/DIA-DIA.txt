@@ -16,10 +16,15 @@ Clebr@crb29 - 19/05/2023
 cd C:/Users/00666263159/Documents/CLEILTON__CCA-BR/CRB--DEV
 git pull
 git add .
-git commit -m "Atualização (JAVA - projeto MEDICOS)"
+git commit -m "Projeto (JAVA - Ofica)"
 git push
 
 
+git checkout crb
+
+
+
+C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SOFTWARES\apache-maven-3.8.7\conf\settings.xml
 ##################################################
 
 Férias
