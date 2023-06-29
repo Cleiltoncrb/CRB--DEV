@@ -20,17 +20,18 @@ public class ClienteController {
     private ClienteRepository clienteRepository;
 
     @Autowired
-    private CarroRepository carroRepositoryarro;
+    private CarroRepository carroRepository;
 
     @GetMapping("/cadastrarcliente")
     public String carregapaginacliente() {
         return "oficina/cadastroCliente";
     }
 
-    @GetMapping("/listarCliente")
 
-    public String listarCliente(Model model) {
-        model.addAttribute("lista", clienteRepository.findAll());
+    @GetMapping("/listarCliente")
+   public String listarCliente(Model model) {
+       model.addAttribute("listaCLiente", clienteRepository.findAll());
+       model.addAttribute("listaCarro", carroRepository.findAll());
         return "oficina/listarCliente";
     }
 
@@ -38,7 +39,7 @@ public class ClienteController {
     @Transactional
     public String cadastrarCliente(CadastrarCliente cliente, CadastrarCarro carro) {
         clienteRepository.save(new Cliente(cliente));
-        carroRepositoryarro.save(new Carro(carro));
+        carroRepository.save(new Carro(carro));
         return "redirect:/oncar/listarCliente";
     }
 

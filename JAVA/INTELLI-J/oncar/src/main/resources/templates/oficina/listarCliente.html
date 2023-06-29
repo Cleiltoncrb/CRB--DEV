@@ -5,39 +5,43 @@
       layout:decorate="~{template.html}"
 >
 <head>
-    <meta charset="UTF-8">
     <title>Lista de Clientes</title>
 </head>
 <body>
-
+<div layout:fragment="conteudo">
     <h1>Lista de Clientes</h1>
     <table>
         <thead>
-            <tr>
-               <th>NOME</th>
-                <th>E-MAIL</th>
-                <th>CPF</th>
-                <th>TELEFONE</th>
-                <th>ENDEREÇO</th>
-                <th>CIDADE</th>
-                <th>PLACA</th>
-                <th>MODELO</th>
-                <th>ANODEFABRICAÇÃO</th>
-            </tr>
+        <tr>
+            <th>NOME</th>
+            <th>E-MAIL</th>
+            <th>CPF</th>
+            <th>TELEFONE</th>
+            <th>ENDEREÇO</th>
+            <th>PLACA</th>
+            <th>MODELO</th>
+            <th>ANODEFABRICAÇÃO</th>
+        </tr>
         </thead>
         <tbody>
-            <tr th:each="cliente : ${lista}">
-                <th th: text="${cliente.nome}"></th>
-                <th th: text="${cliente.e-mail}"></th>
-                <th th: text="${cliente.cpf}"></th>
-                <th th: text="${cliente.telefone}"></th>
-                <th th: text="${cliente.endereco}"></th>
-
-                <th th: text="${carro.placa}"></th>
-                <th th: text="${carro.modelo}"></th>
-                <th th: text="${carro.anofabricacao}"></th>
+        <div>
+            <tr th:each="cliente : ${listaCLiente}" ,>
+                <td th:text="${cliente.nome}"></td>
+                <td th:text="${cliente.email}"></td>
+                <td th:text="${cliente.cpf}"></td>
+                <td th:text="${cliente.telefone}"></td>
+                <td th:text="${cliente.endereco}"></td>
             </tr>
+        </div>
+        <div>
+            <tr th:each="carro : ${listaCarro}">
+                <td th:text="${carro.placa}"></td>
+                <td th:text="${carro.modelo}"></td>
+                <td th:text="${carro.anofabricacao}"></td>
+            </tr>
+        </div>
         </tbody>
     </table>
+</div>
 </body>
 </html>

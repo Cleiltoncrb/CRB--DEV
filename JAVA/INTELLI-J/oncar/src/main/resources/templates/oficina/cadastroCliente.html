@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-br"
+
+<html lang="en"
       xmlns:th="http://thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{template.html}"
->
+      layout:decorate="~{template.html}">
+
 <head>
-    <meta charset="UTF-8">
     <title>Cadastro de Clientes</title>
 </head>
 <body>
+
 <div layout:fragment="conteudo">
     <div class="container">
         <div class="form-image">
             <img src="../img/img_cadastro_cliente.svg">
         </div>
         <div class="form">
+
             <form action="/oncar" method="post">
                 <div class="form-header">
                     <div class="title">
@@ -70,8 +72,10 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
+</div>
 </body>
 </html>
 

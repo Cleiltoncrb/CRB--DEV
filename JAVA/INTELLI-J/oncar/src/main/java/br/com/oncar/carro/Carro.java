@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import static jakarta.persistence.CascadeType.ALL;
-
 @Table(name="tb_carro")
 @Entity(name = "Carro")
 @Getter
