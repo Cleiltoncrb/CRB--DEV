@@ -1,7 +1,6 @@
-package br.com.oncar.cliente;
+package br.com.oncar.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import br.com.oncar.cliente.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {

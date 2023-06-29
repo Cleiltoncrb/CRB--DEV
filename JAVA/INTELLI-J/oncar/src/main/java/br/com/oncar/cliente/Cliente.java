@@ -1,12 +1,13 @@
 package br.com.oncar.cliente;
 
-import br.com.oncar.carro.CarroCliente;
-
+import br.com.oncar.carro.Carro;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static jakarta.persistence.CascadeType.ALL;
 
 
 @Table(name = "tb_cliente")
@@ -26,40 +27,26 @@ public class Cliente {
     private String cpf;
     private String telefone;
     private String endereco;
+    private Boolean ativo;
 
 
-//    @OneToMany
-//    private List<CarroCliente> carro = new ArrayList<>();
+    @OneToMany(cascade = ALL , mappedBy = "cliente")
+    private List<Carro> carro = new ArrayList<>();
 
-//    public Cliente(DadosCadastroCliente dados) {
-//
-//        this.nome = dados.nome();
-//        this.email = dados.email();
-//        this.telefone = dados.telefone();
-//        this.cpf = dados.cpf();
-//        this.endereco = dados.endereco();
-//    }
+    public Cliente(CadastrarCliente dados) {
 
-    public Cliente(String nome, String cpf, String email, String telefone, String endereco){
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.telefone = telefone;
-        this.endereco = endereco;
+        this.ativo = true;
+        this.nome = dados.nome();
+        this.cpf = dados.cpf();
+        this.email = dados.email();
+        this.telefone = dados.telefone();
+        this.endereco = dados.endereco();
     }
 
-    public void atualizarInformacoesCliente(DadosAtualizacaoCliente dados) {
-
-            this.nome = dados.nome();
-
-            this.email = dados.email();
-
-           this.telefone = dados.telefone();
-
-            this.cpf = dados.cpf();
-
-
-//            this.carro.atualizarInformacoesCarro(dados.carro());
-
+    public void atualizarCliente(AtualizarCliente dados) {
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.telefone = dados.telefone();
+        this.cpf = dados.cpf();
     }
 }
