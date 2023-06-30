@@ -18,56 +18,59 @@
         <div class="form">
 
             <form action="/oncar" method="post">
+
+                <input type="hidden" name="_method" value="put" th:if="${cliente != null}">
+                <input type="hidden" name="id" th:value="${cliente?.id}">
+
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro de Cliente</h1>
                     </div>
-
                     <div class="input-group">
                         <div class="input-box">
                             <label for="nome">Nome</label>
-                            <input id="nome" type="text" name="nome">
+                            <input id="nome" type="text" name="nome" th:value="${cliente?.nome}">
                         </div>
 
                         <div class="input-box">
                             <label for="email">Email</label>
-                            <input id="email" type="text" name="email">
+                            <input id="email" type="text" name="email" th:value="${cliente?.email}">
                         </div>
 
                         <div class="input-box">
                             <label for="cpf">Cpf</label>
-                            <input id="cpf" type="text" name="cpf">
+                            <input id="cpf" type="text" name="cpf" th:value="${cliente?.cpf}">
                         </div>
 
                         <div class="input-box">
                             <label for="telefone">Telefone</label>
-                            <input id="telefone" type="text" name="telefone">
+                            <input id="telefone" type="text" name="telefone" th:value="${cliente?.telefone}">
                         </div>
 
                         <div class="input-box">
                             <label for="endereco">Endereço</label>
-                            <input id="endereco" type="text" name="endereco">
+                            <input id="endereco" type="text" name="endereco" th:value="${cliente?.endereco}">
                         </div>
-
 
                         <div class="input-box">
                             <label for="placa">Placa</label>
-                            <input id="placa" type="text" name="placa">
+                            <input id="placa" type="text" name="placa" th:value="${carro?.placa}">
                         </div>
-
 
                         <div class="input-box">
                             <label for="modelo">Modelo</label>
-                            <input id="modelo" type="text" name="modelo">
+                            <input id="modelo" type="text" name="modelo" th:value="${carro?.modelo}">
                         </div>
 
                         <div class="input-box">
                             <label for="anofabricacao">Ano de Fabricação</label>
-                            <input id="anofabricacao" type="text" name="anofabricacao">
+                            <input id="anofabricacao" type="text" name="anofabricacao" th:value="${carro?.anofabricacao}">
 
                             <div class="cadastrar-button">
                                 <button>Cadastrar</button>
                             </div>
+                            <br/>
+                            <a href="/oncar/listarCliente">Listar Cliente</a>
                         </div>
                     </div>
                 </div>

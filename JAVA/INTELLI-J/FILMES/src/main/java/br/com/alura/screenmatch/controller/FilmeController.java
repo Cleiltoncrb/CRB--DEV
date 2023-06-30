@@ -16,6 +16,12 @@ public class FilmeController {
     @Autowired
     private FilmeRepository repository;
 
+    @GetMapping
+    public String carregaPaginaListagem(Model model) {
+        model.addAttribute("lista", repository.findAll());
+        return "filmes/listagem";
+    }
+
     @GetMapping("/formulario")
     public String carregaPaginaFormulario(Long id, Model model) {
         if (id != null) {
@@ -25,11 +31,7 @@ public class FilmeController {
         return "filmes/formulario";
     }
 
-    @GetMapping
-    public String carregaPaginaListagem(Model model) {
-        model.addAttribute("lista", repository.findAll());
-        return "filmes/listagem";
-    }
+
 
     @PostMapping
     @Transactional

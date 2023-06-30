@@ -23,7 +23,7 @@ public class Carro {
     private String anofabricacao;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "cliente_id" )
     private Cliente cliente;
 
     public Carro(CadastrarCarro carro) {
