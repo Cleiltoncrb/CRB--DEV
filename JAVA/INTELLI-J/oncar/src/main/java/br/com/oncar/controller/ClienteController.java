@@ -26,8 +26,6 @@ public class ClienteController {
     @Autowired
     private CarroRepository carroRepository;
 
-
-
     @GetMapping("/cadastrarcliente")
     public String carregapaginacliente() {
         return "oficina/cadastroCliente";
