@@ -6,12 +6,60 @@
 >
 <head>
     <title>Lista de Clientes</title>
+    <style>
+
+fieldset {
+<!--    border: 2px #000000 solid;-->
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+table,
+th,
+td,
+caption {
+    border: 2px solid black;
+    width: 100%;
+
+}
+
+table {
+    background-color: #C7BCA1;
+    font-weight: bold
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #D6E8DB;
+}
+
+td:nth-child(3),
+tfoot td:nth-child(2) {
+    text-align: right;
+    font-weight: bold
+}
+
+
+
+
+
+
+    </style>
 </head>
 <body>
 <div layout:fragment="conteudo">
-
-    <a href="/oncar/cadastrarcliente">Novo Cliente</a>
-
+    <div>
+        <button>
+            <a href="/oncar/cadastrarcliente">Novo Cliente</a>
+        </button>
+        <br>
+        <br>
+    </div>
     <fieldset>
         <legend>Dados do Clientes</legend>
         <div>
@@ -53,12 +101,22 @@
                     <th>PLACA</th>
                     <th>MODELO</th>
                     <th>ANODEFABRICAÇÃO</th>
-                </thead>
                 </tr>
+                </thead>
+
                 <tr th:each="carro : ${listaCarro}">
                     <td th:text="${carro.placa}"></td>
                     <td th:text="${carro.modelo}"></td>
                     <td th:text="${carro.anofabricacao}"></td>
+                    <td>
+                        <a th:href="@{/oncar/cadastrarcliente?id={id}(id=${carro.id})}">Editar</a>
+
+                        <form action="/oncar" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <input type="hidden" name="id" th:value="${carro.id}">
+                            <input type="submit" value="Excluir">
+                        </form>
+                    </td>
                 </tr>
             </table>
         </div>

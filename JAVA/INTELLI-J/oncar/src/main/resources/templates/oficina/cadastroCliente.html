@@ -21,6 +21,8 @@
 
                 <input type="hidden" name="_method" value="put" th:if="${cliente != null}">
                 <input type="hidden" name="id" th:value="${cliente?.id}">
+                <input type="hidden" name="_method" value="put" th:if="${carro != null}">
+                <input type="hidden" name="id" th:value="${carro?.id}">
 
                 <div class="form-header">
                     <div class="title">
@@ -39,13 +41,14 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label for="cpf">Cpf</label>
-                                        <input id="cpf" type="text" name="cpf" th:value="${cliente?.cpf}">
-                                    </td>
-                                    <td>
                                         <label for="email">Email</label>
                                         <input id="email" type="text" name="email" th:value="${cliente?.email}">
                                     </td>
+                                    <td>
+                                        <label for="cpf">Cpf</label>
+                                        <input id="cpf" type="text" name="cpf" th:value="${cliente?.cpf}">
+                                    </td>
+
                                 </tr>
                                 <tr>
                                     <td>
@@ -55,10 +58,8 @@
                                     </td>
                                     <td>
                                         <label for="endereco">Endereço</label>
-                                        <input id="endereco" type="text" name="endereco"
-                                               th:value="${cliente?.endereco}">
+                                        <input id="endereco" type="text" name="endereco" th:value="${cliente?.endereco}">
                                     </td>
-
                                 </tr>
                             </table>
                         </fieldset>
@@ -66,10 +67,12 @@
                             <legend>Dados do veículo</legend>
 
                             <table class="input-box">
+
                                 <tr>
                                     <td>
                                         <label for="placa">Placa</label>
-                                        <input id="placa" type="text" name="placa" th:value="${carro?.placa}">
+                                        <input class="form-control border-0" id="placa" type="text" name="placa"
+                                               th:value="${carro?.placa}">
                                     </td>
                                     <td>
                                         <label for="modelo">Modelo</label>
@@ -89,7 +92,7 @@
                         <br/>
                         <div class="cadastrar-button">
                             <button><a href="/oncar/listarCliente">Listar Cliente</a></button>
-<!--                            <a class="cadastrar-button" href="/oncar/listarCliente">Listar Cliente</a>-->
+                            <!--                            <a class="cadastrar-button" href="/oncar/listarCliente">Listar Cliente</a>-->
                         </div>
                     </div>
                 </div>

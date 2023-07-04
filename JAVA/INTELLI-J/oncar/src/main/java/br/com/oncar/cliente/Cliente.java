@@ -1,5 +1,6 @@
 package br.com.oncar.cliente;
 
+import br.com.oncar.carro.AtualizarCarro;
 import br.com.oncar.carro.Carro;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,8 +11,8 @@ import java.util.List;
 import static jakarta.persistence.CascadeType.ALL;
 
 
+@Entity
 @Table(name = "tb_cliente")
-@Entity(name = "Cliente")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,23 +31,37 @@ public class Cliente {
     private Boolean ativo;
 
 
-    @OneToMany(cascade = ALL , mappedBy = "cliente")
+    @OneToMany(cascade = ALL, mappedBy = "cliente")
     private List<Carro> carro = new ArrayList<>();
 
     public Cliente(CadastrarCliente dados) {
 
         this.ativo = true;
         this.nome = dados.nome();
-        this.cpf = dados.cpf();
         this.email = dados.email();
+        this.cpf = dados.cpf();
         this.telefone = dados.telefone();
         this.endereco = dados.endereco();
+
     }
 
-    public void atualizarCliente(AtualizarCliente dados) {
-        this.nome = dados.nome();
-        this.email = dados.email();
-        this.telefone = dados.telefone();
-        this.cpf = dados.cpf();
+    public void atualizarCliente(AtualizarCliente cliente) {
+
+        if (cliente.nome() != null) {
+            this.nome = cliente.nome();
+        }
+        if (cliente.email() != null) {
+            this.email = cliente.email();
+        }
+        if (cliente.cpf() != null) {
+            this.cpf = cliente.cpf();
+
+        }
+        if (cliente.telefone() != null) {
+            this.telefone = cliente.telefone();
+        }
+        if (cliente.endereco() != null) {
+            this.endereco = cliente.endereco();
+        }
     }
 }

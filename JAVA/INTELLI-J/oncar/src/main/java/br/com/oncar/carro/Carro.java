@@ -7,8 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Table(name="tb_carro")
-@Entity(name = "Carro")
+@Entity
+@Table(name = "tb_carro")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,7 +23,7 @@ public class Carro {
     private String anofabricacao;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id" )
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     public Carro(CadastrarCarro carro) {
@@ -32,7 +32,7 @@ public class Carro {
         this.anofabricacao = carro.anofabricacao();
     }
 
-    public void AtualizarCarro(AtualizarCarro dados) {
+    public void atualizarCarro(AtualizarCarro dados) {
         if (dados.placa() != null) {
             this.placa = dados.placa();
         }
