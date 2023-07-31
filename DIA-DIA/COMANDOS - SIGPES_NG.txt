@@ -1,0 +1,85 @@
+
+################################################## - BACK END - ##################################################################################
+
+
+wsl 
+wsl -l -v
+
+cd C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SIGPES-NG\SIGPES-DEV\entrada-pessoal-api
+
+git pull
+
+docker-compose up
+
+docker compose ps --all
+
+wsl --shutdown
+
+
+/mnt/c/Users/00666263159/Documents/CLEILTON__CCA-BR/SIGPES-NG/SIGPES-DEV/entrada-pessoal-api
+/mnt/c/Users/00666263159/Documents/CLEILTON__CCA-BR/DOCKER/app-exemplo
+
+
+################################################### - FRONT END - #################################################################################
+
+Usuário: 000000000 
+Senha: 123456
+
+C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SIGPES-NG\SIGPES-DEV\entrada-pessoal-fe
+
+git pull
+
+npm run devw
+
+npm install
+
+
+
+
+  GNU nano 6.2                               /home/crb/.docker/config.json                                  M     
+{
+        "auths": {
+                "https://index.docker.io/v1/": {}
+        },
+"credsStore": "desktop.exe"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
