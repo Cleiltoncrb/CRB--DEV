@@ -13,7 +13,7 @@ cleilton.oi18@gmail.com
 Clebr@crb29 - 19/05/2023
 
 
-cd C:/Users/00666263159/Documents/CLEILTON__CCA-BR/CRB--DEV
+cd C:/Users/00666263159/Documents/CLEILTON__CCA-BR/GIT/CRB--DEV
 git pull
 git add .
 git commit -m "Projeto (JAVA - Ofica)"
