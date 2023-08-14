@@ -107,9 +107,54 @@ Prezados solicito a funcionalidade no SIGADAER para aprovação de Ofício (âmb
 
 [GERENTE] - Boa tarde. Conforme solicitado as máquinas foram criadas. 
 
-Debian IP 192.168.60.36 
+
+
+ ============ nano /etc/apt/apt.conf ==================
+Acquire::HTTP::proxy "http://172.16.31.151:3142";
+
+
+Debian IP 192.168.60.36 - tyrion60-36
 Usuário: sddm 
-Senha: 123456 S@iccaBR
+Senha: sddmqocon
+root: S@iccaBR
+crb: crb
+
+ssh sddm@192.168.60.36
+
+ - Exibir todos os usuários existentes na rede
+sudo cat /etc/passwd
+
+ - Registrar e deletar usuários
+ - useradd –help e adduser
+
+adduser "username"
+
+usermod -aG sudo username
+su - username
+
+
+
+ - Registrar senhas
+sudo passwd manoel
+
+ - Remover usuários
+sudo userdel -r manoel
+
+
+ - Criar grupos e adicionar usuários a eles
+addgroup diretores
+addgroup operadores
+
+sudo usermod -a -G diretores carlos_silva
+
+sudo usermod -a -G operadores
+
+
+
+
+
+
+
 
 
 (favor alterar a senha após o acesso) 
