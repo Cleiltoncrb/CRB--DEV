@@ -51,37 +51,13 @@ Senha: 3h69fSe7
 
 REDE:
 00666263159
-Clebr2933@
-
-
-
-Visual Studio Code
-Ctrl+shift+P =  para instalar pacotes 
-
+Clebr2933!
 
 
 CCA - RJ
 2101-7900
 
 2101-7856
-
-
-Apresentação de Certidão de Nascimento -  Inclusão de Beneficiário
-
-Cópia da Certidão de Nascimento Autenticada 
-Cópia da Certidão de Casamento Autenticada 
-ANEXO A - NSCA 160-5 2022 
-
-Encaminho, para vossa apreciação.
-
-
-
-
-
-
-
-"A Zimbra disponibiliza o Chat básico, com mensagens somente entre usuários diretamente de maneira gratuita. Esse recurso é muito interessante para uma comunicação em tempo real. Como o recurso é implementado como um Zimlet, você pode controlar para quem deseja habilitar o recurso."  Referencia do artigo: https://pensandolinux.com.br/2022/01/04/zimbra-instalando-o-recurso-de-chat-ne-e-open-source/ 
-
 
 
 Passos para instalação do Chat são:
@@ -239,13 +215,14 @@ su - alice
 
 
 
-
+~/scritps/dbfetch
+scripts/
 
 
 
 Debian IP 192.168.60.36 -- tyrion60-36
 Usuário: sddm 
-Senha: 123456 
+Senha: sddmqocon
 senha root: S@iccaBR
 
 
@@ -253,13 +230,83 @@ root@tyrion60-36:/home/sddm#
 
 
 
+mkdir scripts
+cd scripts
+> cabecalho
+chmod +x cabecalho
 
 
-sudo apt-get install\ca-certificates\curl\gnupg
+nano cabecalho
+#!/usr/bin/env bash
+
+# Include 'os-release' to grab Debian pretty name...
+
+. /etc/os-release
+
+******************************************************************
+# Styles...
+
+red="$(tput setaf 1)"
+bold="$(tput bold)"
+reset="$(tput sgr0)"
+
+# Get terminal col width...
+
+cols=$(tput cols)
+
+# Main...
+
+clear
+
+echo "
+$red ⢀⣴⠾⠻⢶⣦⠀$reset ${bold}$PRETTY_NAME${reset}
+$red ⣾⠁⢠⠒⠀⣿⡁$reset ${bold}KERNEL::${reset} $(uname -rm)
+$red ⢿⡄⠘⠷⠚⠋⠀$reset ${bold}UPTIME::${reset} $(uptime -p | cut -d' ' -f2-)
+$red ⠈⠳⣄⠀⠀⠀⠀$reset ${bold}USER::$USER <-> HOSTNAME::$HOSTNAME${reset}
+"
+printf -- "-%.s" $(seq $cols)
+echo -e "\n"
+
+exit 0
+******************************************************************
+
+nano /home/crb/.bashrc
+
+. ~/.bashrc
 
 
-wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.1.8.tar.gz
+
+
+************************************************************************************************************************************
+
+Chave do Docker está rm /usr/share/keyrings/docker-archive-keyring.gpg
+
+
+root@tyrion60-36:/usr/share/keyrings# pwd
+/usr/share/keyrings
+root@tyrion60-36:/usr/share/keyrings#
+root@tyrion60-36:/usr/share/keyrings# ls -la
+total 208
+drwxr-xr-x   2 root root  4096 ago 16 08:44 .
+drwxr-xr-x 271 root root 12288 ago 16 11:13 ..
+-rw-r--r--   1 root root  8700 mar 28 17:31 debian-archive-bookworm-automatic.gpg
+-rw-r--r--   1 root root  8709 mar 28 17:31 debian-archive-bookworm-security-automatic.gpg
+-rw-r--r--   1 root root   280 mar 28 17:31 debian-archive-bookworm-stable.gpg
+-rw-r--r--   1 root root  8700 mar 28 17:31 debian-archive-bullseye-automatic.gpg
+-rw-r--r--   1 root root  8709 mar 28 17:31 debian-archive-bullseye-security-automatic.gpg
+-rw-r--r--   1 root root  2453 mar 28 17:31 debian-archive-bullseye-stable.gpg
+-rw-r--r--   1 root root  8132 mar 28 17:31 debian-archive-buster-automatic.gpg
+-rw-r--r--   1 root root  8141 mar 28 17:31 debian-archive-buster-security-automatic.gpg
+-rw-r--r--   1 root root  2332 mar 28 17:31 debian-archive-buster-stable.gpg
+-rw-r--r--   1 root root 56156 mar 28 17:31 debian-archive-keyring.gpg
+-rw-r--r--   1 root root 54031 mar 28 17:31 debian-archive-removed-keys.gpg
+-rw-r--r--   1 root root  2760 ago 16 11:10 docker-archive-keyring.gpg
+-rw-r--r--   1 root root     0 ago 16 08:44 hashicorp-archive-keyring.gpg
+root@tyrion60-36:/usr/share/keyrings#
+
+************************************************************************************************************************************
 
 
 
-wget https://dlcdn.apache.org/tomcat/tomcat-11/v11.0.0-M5/bin/apache-tomcat-11.0.0-M5.tar.gz 
+
+
