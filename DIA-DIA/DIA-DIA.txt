@@ -279,7 +279,7 @@ nano /home/crb/.bashrc
 
 ************************************************************************************************************************************
 
-Chave do Docker está rm /usr/share/keyrings/docker-archive-keyring.gpg
+  -- Chave do Docker está rm /usr/share/keyrings/docker-archive-keyring.gpg
 
 
 root@tyrion60-36:/usr/share/keyrings# pwd

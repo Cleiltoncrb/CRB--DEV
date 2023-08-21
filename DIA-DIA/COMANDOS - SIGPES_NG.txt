@@ -7,6 +7,7 @@ wsl -l -v
 
 cd C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SIGPES-NG\SIGPES-DEV\entrada-pessoal-api
 
+usuário git - develop
 git pull
 
 docker-compose up
@@ -27,7 +28,9 @@ Senha: 123456
 
 C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SIGPES-NG\SIGPES-DEV\entrada-pessoal-fe
 
+usuário git - feture/01
 git pull
+
 
 npm run devw
 
