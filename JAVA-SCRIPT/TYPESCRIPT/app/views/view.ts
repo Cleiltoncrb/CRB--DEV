@@ -8,7 +8,7 @@ export abstract class View<Tipo> {
         if(elemento){
             this.elemento = elemento as HTMLElement;
         }else{
-            throw Error('Seletor ${seletor} não existe no Dom verifique com o desenvolvedor');
+            throw Error(`Seletor ${seletor} não existe no Dom verifique `);
         }
         if (escapar){
             this.escapar = escapar;
