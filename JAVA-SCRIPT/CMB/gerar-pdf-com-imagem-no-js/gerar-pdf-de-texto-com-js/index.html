@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerar PDF com JS</title>
+</head>
+
+<body>
+
+    <h1>Gerar PDF com JavaScript</h1>
+
+    <button onclick="gerarPdf()">Gerar PDF</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+        integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+        crossorigin="anonymous"></script>
+
+        <script>
+            function gerarPdf()
+            {
+                // Instanciar o jsPDF
+                var doc = new jsPDF();
+
+                // Texto que deve estar no PDF
+                doc.text('Celke - Gerar PDF com JavaScript!', 10, 10);
+
+                // Gerar PDF
+                doc.save('celke.pdf');
+            }
+        </script>
+
+</body>
+
+</html>
