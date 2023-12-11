@@ -1,4 +1,55 @@
 
+coreng -> L4Z9z5zEBOOcuv$W
+entradang -> UWkwYJTEy#USHTbL
+
+
+Cisco Webex Site - REUNIÕES DALY
+https://fab.webex.com/meet/desenvolvimento.sigpesng
+
+
+
+
+CESSO AO BD SIGPES-NG 
+
+DB_HOST: exacc02hmlg-scan.ccarj.intraer
+DB_NAME: ssigpesngd.ccarj.intraer
+User: sigpesng
+DB_PASSWORD: S1gp3sNG
+DB_PORT: 1521
+
+telnet exacc02hmlg-scan.ccarj.intraer 1521
+
+Para todas as instâncias
+docker stop $(docker ps -a -q)
+
+Remove todas as instâncias
+docker rm $(docker ps -a -q)
+
+Para todas as imagens
+docker image rm $(docker image ls -a -q)
+
+Para todos os volumes
+docker volume prune
+
+Resumo
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker image rm $(docker image ls -a -q)
+docker volume prune
+
+
+http://sigpes-bsb.ccabr.intraer:18080/
+
+
+swagger
+http://localhost:8000/swagger-ui/index.html#/
+
+
+Autorizar get
+client_id : sigpesng
+credentials:secret: 8aea2fca-e1ac-40d4-8de4-b85d26ded8bd
+
+
 ################################################## - BACK END - ##################################################################################
 
 
@@ -23,12 +74,21 @@ wsl --shutdown
 
 ################################################### - FRONT END - #################################################################################
 
-Usuário: 000000000 
-Senha: 123456
+Usuário: 00000000000 
+Senha: 12345
+
+
+IP 10.228.112.54:8081/
+
+camunda - http://192.168.60.36:8081/
+Usuário: demo 
+Senha: demo
+
+
 
 C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SIGPES-NG\SIGPES-DEV\entrada-pessoal-fe
 
-usuário git - feture/01
+usuário git - develop  --> feture/01
 git pull
 
 
@@ -47,41 +107,34 @@ npm install
 "credsStore": "desktop.exe"
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ####################################################################################################################################
 
 
 
+Acquire{
+HTTP::proxy "http://00666263159:Clebr2933%40@10.228.64.50:8080";
+HTTPS::proxy "http://00666263159:Clebr2933%40@10.228.64.50:8080";
+FTP::proxy "http://00666263159:Clebr2933%40@10.228.64.50:8080";
+}
+
+sigpes-bsb.ccabr.intraer:26500
+
+pnpm install --shamefully-hoist
+
+pnpm api:generate:domain
+pnpm api:generate:process
+
+pnpm devw
 
 
 
+C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SOFTWARES\apache-maven-3.8.7\conf\settings.xml
+
+C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SIGPES-NG\SIGPES-DEV\repository
 
 
 
-
-
+PROXY_HOST=proxybrasilia.intraer;PROXY_PORT=8080;PROXY_USER=0066626359;PROXY_PASS=Clebr2933%40;USE_PROXY=true
 
 
 

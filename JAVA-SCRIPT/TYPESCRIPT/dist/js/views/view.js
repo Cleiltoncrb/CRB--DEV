@@ -6,7 +6,7 @@ export class View {
             this.elemento = elemento;
         }
         else {
-            throw Error('Seletor ${seletor} não existe no Dom verifique com o desenvolvedor');
+            throw Error(`Seletor ${seletor} não existe no Dom verifique `);
         }
         if (escapar) {
             this.escapar = escapar;

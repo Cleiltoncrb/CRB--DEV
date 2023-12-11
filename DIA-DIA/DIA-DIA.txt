@@ -13,6 +13,50 @@ cleilton.oi18@gmail.com
 Clebr@crb29 - 19/05/2023
 
 
+
+##################### GIT LAB #####################
+user: cleilton
+Senha: Clebr2933
+
+
+##################### CAMUNDA #####################
+Camunda:
+Clebr2933camunda@
+
+
+##################### SIGADAER #####################
+SIGADAER:
+SARAM: 7535848
+Senha: 3h69fSe7
+
+##################### E-risaer #####################
+E-risaer.decea:
+CPF
+Clebr2933!
+
+##################### REDE #########################
+REDE:
+00666263159
+Clebr2933!
+
+
+##################### DOCKER HUB #########################
+cleilton.oi18@gmail.com
+Clebr2933docker
+
+##################### HARBOR #########################
+
+user: cleiltoncrb
+pass: CRBClebr2933
+
+##################### RANCHER #########################
+https://rancher.ccarj.intraer/
+user: cleiltoncrb
+pass: CRBClebr2933
+
+############################################################################################
+
+
 cd C:/Users/00666263159/Documents/CLEILTON__CCA-BR/GIT/CRB--DEV
 git pull
 git add .
@@ -44,14 +88,7 @@ SAIDA: smtp.mail.intraer 587
 "AP Cleilton - SEREP-BR" <cleiltoncrb@fab.mil.br>
 
 
-SIGADAER:
-SARAM: 7535848
-Senha: 3h69fSe7
 
-
-REDE:
-00666263159
-Clebr2933!
 
 
 CCA - RJ
@@ -84,18 +121,28 @@ Prezados solicito a funcionalidade no SIGADAER para aprovação de Ofício (âmb
 [GERENTE] - Boa tarde. Conforme solicitado as máquinas foram criadas. 
 
 
+/lib/systemd/system/docker.service
+
+
+
+# LINH COMENTADA PARA TESTE   ==>   ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+ExecStart=/usr/bin/dockerd -H fd:// -H=tcp://0.0.0.0:2375
+
+
+tcp://sigpes-bsb.ccabr.intraer:2375
 
  ============ nano /etc/apt/apt.conf ==================
 Acquire::HTTP::proxy "http://172.16.31.151:3142";
 
 
-Debian IP 192.168.60.36 - tyrion60-36
+Debian IP 10.228.112.54 - sigpes-bsb
 Usuário: sddm 
 Senha: sddmqocon
 root: S@iccaBR
 crb: crb
 
-ssh sddm@192.168.60.36
+ssh sddm@10.228.112.54
 
  - Exibir todos os usuários existentes na rede
 sudo cat /etc/passwd
@@ -126,10 +173,7 @@ sudo usermod -a -G diretores carlos_silva
 sudo usermod -a -G operadores
 
 
-
-
-
-
+619
 
 
 
@@ -157,7 +201,7 @@ _____________________________________________________________
 
 
 Ten Cleilton 	IP: 10.228.101.135 - (Origem)
-Ten Portugal 	IP: 10.228.101.117 - (Origem)
+Ten Portugal 	IP: 10.228.101.145 - (Origem)  net rpc shutdown -I 10.228.101.145 -U 10475964667    shutdown -i /m /10.228.101.145
 Ten Oliverio 	IP: 10.228.101.120 - (Origem)
 Ten Souza 		IP: 10.228.101.144 - (Origem)
 Ten Bueno 		IP: 10.228.101.141 - (Origem)
@@ -168,7 +212,7 @@ Ten Stefany		IP: 10.228.101.105 - (Origem)
 Ten Nobrega		IP: 10.228.101.143 - (Origem)
 Ten Giselli		IP: 10.228.101.129 - (Origem)
 
-Servidor Debian IP 192.168.60.36 e OracleLinux 192.168.60.54 - (Destino)
+Servidor Debian IP 10.228.112.54 e OracleLinux 192.168.60.54 - (Destino)
 
 
 
@@ -220,7 +264,8 @@ scripts/
 
 
 
-Debian IP 192.168.60.36 -- tyrion60-36
+esse IP 10.228.65.95 vai ser o NAT para o IP interno 
+Debian IP 10.228.112.54 -- sigpes-bsb
 Usuário: sddm 
 Senha: sddmqocon
 senha root: S@iccaBR
@@ -305,7 +350,45 @@ drwxr-xr-x 271 root root 12288 ago 16 11:13 ..
 root@tyrion60-36:/usr/share/keyrings#
 
 ************************************************************************************************************************************
+listar usuários ligados no servidor linux 
+deleatar: kill -9 PID
 
+ fuser -v /bin/bash
+
+
+
+---STOP DOCKER---
+docker stop $(docker ps -a -q)
+
+
+Bom dia 
+
+Nome: 2T Cleilton
+
+✅ O que fiz anteriormente: segundo encontro, workshop ministrado pela equipe de desenvolvimento CCA-RJ;
+
+♾ O que estou fazendo: Configuração e estudos, ambiente de desenvolvimento SIGPS-NG; 
+
+⚠️ O que pretendo fazer hoje: Repassando os conceitos do ambiente, estudando VueJs, vuetify,  typescript, Nuxt,  Java ;
+
+🚫 Impedimentos: N/A
+
+
+
+
+
+
+
+
+
+
+@ccarj:registry=http://nexus.ccarj.intraer/repository/npm-fab-agrupado-internet-ccarj
+proxy=http://00666263159:Clebr2933%40@proxybrasilia.intraer:8080
+https-proxy=http://00666263159:Clebr2933%40@proxybrasilia.intraer:8080
+no_proxy=nexus.ccarj.intraer;localhost
+noproxy=nexus.ccarj.intraer;localhost
+strict-ssl=false
+registry=https://registry.npmjs.org/
 
 
 
