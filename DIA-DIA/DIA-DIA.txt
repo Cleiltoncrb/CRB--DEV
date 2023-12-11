@@ -54,6 +54,12 @@ https://rancher.ccarj.intraer/
 user: cleiltoncrb
 pass: CRBClebr2933
 
+##################### OpenVpn #########################
+OpenVpn
+Senha: 3WsfUBQl
+
+
+
 ############################################################################################
 
 
