@@ -396,6 +396,10 @@ noproxy=nexus.ccarj.intraer;localhost
 strict-ssl=false
 registry=https://registry.npmjs.org/
 
-
-
-
+---------------------------------------
+MInha Oi                             --
+CPF=00683320173 -                    --
+GELANNE Senha: 653489p               --
+telefone = 61 3379-0546              --
+									 --
+---------------------------------------
