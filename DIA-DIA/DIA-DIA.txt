@@ -1,3 +1,10 @@
+
+2º Ten QOCON PSO	GERLANNE LIMA	2127
+
+Clebr2933#
+RBclebr2933@
+
+
 Bom dia,
 
 Incumbiu-me a Senhora Chefe da SPE, informar ao efetivo que acrescente em todo Requerimento confeccionado no segundo parágrafo a seguinte frase:
@@ -45,7 +52,7 @@ cleilton.oi18@gmail.com
 Clebr2933docker
 
 ##################### HARBOR #########################
-
+https://registry.ccarj.intraer/account/sign-in?redirect_url=%2Fharbor%2Fprojects
 user: cleiltoncrb
 pass: CRBClebr2933
 
@@ -55,9 +62,13 @@ user: cleiltoncrb
 pass: CRBClebr2933
 
 ##################### OpenVpn #########################
-OpenVpn
+OpenVpn labor
 Senha: 3WsfUBQl
 
+##################### NUXEO MEU USUÁRIO #########################
+
+cleilton.oi18@gmail.com
+CCAnux@2023
 
 
 ############################################################################################
