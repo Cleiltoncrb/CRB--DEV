@@ -70,8 +70,16 @@ Senha: 3WsfUBQl
 cleilton.oi18@gmail.com
 CCAnux@2023
 
+##################### Macrium #########################
+
+Macrium 
+Clone@2023
+
 
 ############################################################################################
+
+
+
 
 
 cd C:/Users/00666263159/Documents/CLEILTON__CCA-BR/GIT/CRB--DEV
