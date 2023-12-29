@@ -1,9 +1,6 @@
 
 2º Ten QOCON PSO	GERLANNE LIMA	2127
 
-Clebr2933#
-RBclebr2933@
-
 
 Bom dia,
 
@@ -44,7 +41,7 @@ Clebr2933!
 ##################### REDE #########################
 REDE:
 00666263159
-Clebr2933!
+RBClebr2933@
 
 
 ##################### DOCKER HUB #########################
