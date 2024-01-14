@@ -78,8 +78,11 @@ user: cleiltoncrb
 pass: CRBClebr2933
 
 ##################### OpenVpn #########################
-OpenVpn labor
-Senha: 3WsfUBQl
+
+OpenVpn PC de casa: 
+senha: 3WsfUBQl
+
+
 
 ##################### NUXEO MEU USUÁRIO #########################
 
