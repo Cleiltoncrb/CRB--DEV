@@ -141,24 +141,24 @@ C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SOFTWARES\apache-maven-3.8.7\con
 C:\Users\00666263159\Documents\CLEILTON__CCA-BR\SIGPES-NG\SIGPES-DEV\repository
 
 
+PROXY_HOST=proxybrasilia.intraer;PROXY_PORT=8080;PROXY_USER=00666263159;PROXY_PASS=Clebr2933@;USE_PROXY=true
 
-PROXY_HOST=proxybrasilia.intraer;PROXY_PORT=8080;PROXY_USER=0066626359;PROXY_PASS=Clebr2933%40;USE_PROXY=true
-
-
+PROXY_HOST=proxybrasilia.intraer;PROXY_PORT=8080;PROXY_USER=CPF;PROXY_PASS=ClSENHA;USE_PROXY=true
 
 
 Atalhos úteis para IDE IntelliJ Idea
 #Java
 O Intellij é uma ótima IDE para trabalhar com Java e outras linguagens JVM, como Kotlin, Scala e Groovy, em todos os tipos de aplicações. Pensando nisso separei os principais atalhos para melhor utilização.
 
-Geral
+#### Geral ####s
 Alt + 1: Abrir/Fechar aba de projetos
 Alt + Shift + Insert: Alterna entre modo de seleção de linha/coluna
 Ctrl + Shift + F12: Expandir a tela
 Na aba de projetos
 Alt + Insert: Para criar um novo arquivo
 Alt + 1: Abrir/Fechar aba de projetos
-Templates de código
+
+#### Templates de código ####
 psvm: Criar método main
 sout: System.out.println()
 Ctrl + Alt + C: Cria constante (precisa estar sobre código que permite atribuição)
@@ -166,7 +166,8 @@ Ctrl + Alt + F: Cria field - propriedade da classe (precisa estar sobre código 
 Ctrl + Alt + V: Cria variável (precisa estar sobre código que permite atribuição)
 Ctrl + Alt + T: Templates de IF, for, while, etc (precisa selecionar o código antes)
 Ctrl + J: Exibe todos os templates disponíveis
-Na aba de código
+
+#### Na aba de código ####
 Ctrl + Y: Apaga a linha inteira
 Ctrl + D: Duplicar linha atual
 Alt + Shift + Setas: Mover linha atual
@@ -175,7 +176,7 @@ Ctrl + Shift + A: Find Action - mostra todas as ações da IDE em uma lista
 Ctrl + N: Busca rápida de classes
 Ctrl + Shift + N: Busca rápida de arquivos
 Ctrl + B: Inspecionar elemento - go to class, method, declaration, etc
-Ctrl + Alt + L: Reformatar código
+Ctrl + Alt + L: IDENTAÇÃO - Reformatar código
 Ctrl + Alt + M: Extrair método - transforma código selecionado em método
 Shift + F6: Renomeia classe, variável, método, etc
 Ctrl + Shift + F6: Usar referência de outra classe
