@@ -449,3 +449,8 @@ GELANNE Senha: 653489p               --
 telefone = 61 3379-0546              --
 									 --
 ---------------------------------------
+Nome da Rede: CASA5G
+Senha: nestacasa5G
+
+Nome da Rede: $$-CASA-$$_5G
+Senha: $-c@s@-$_5G
