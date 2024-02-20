@@ -1,12 +1,16 @@
 
+######### UR para acessar ambinete SIGPES-NG ##########
+
+https://ng-portal.hml.rancher.ccarj.intraer/entrada-pessoal
+https://ng-portal.sta.rancher.ccarj.intraer/entrada-pessoal/
+
+
 coreng -> L4Z9z5zEBOOcuv$W
 entradang -> UWkwYJTEy#USHTbL
 
 
 Cisco Webex Site - REUNIÕES DALY
 https://fab.webex.com/meet/desenvolvimento.sigpesng
-
-
 
 
 CESSO AO BD SIGPES-NG 
@@ -40,7 +44,7 @@ docker volume prune
 Resumo
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
-docker image rm $(docker image fab763708575)
+docker rm $(docker ps -a -q)
 docker volume prune
 
 docker system prune -a
@@ -105,16 +109,6 @@ npm run devw
 npm install
 
 
-
-
-  GNU nano 6.2                               /home/crb/.docker/config.json                                  M     
-{
-        "auths": {
-                "https://index.docker.io/v1/": {}
-        },
-"credsStore": "desktop.exe"
-}
-
 ####################################################################################################################################
 
 
@@ -146,7 +140,10 @@ PROXY_HOST=proxybrasilia.intraer;PROXY_PORT=8080;PROXY_USER=00666263159;PROXY_PA
 PROXY_HOST=proxybrasilia.intraer;PROXY_PORT=8080;PROXY_USER=CPF;PROXY_PASS=ClSENHA;USE_PROXY=true
 
 
-Atalhos úteis para IDE IntelliJ Idea
+
+
+#################### - Atalhos úteis para IDE IntelliJ - ###############################
+
 #Java
 O Intellij é uma ótima IDE para trabalhar com Java e outras linguagens JVM, como Kotlin, Scala e Groovy, em todos os tipos de aplicações. Pensando nisso separei os principais atalhos para melhor utilização.
 
