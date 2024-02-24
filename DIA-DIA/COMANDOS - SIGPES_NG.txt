@@ -12,6 +12,8 @@ entradang -> UWkwYJTEy#USHTbL
 Cisco Webex Site - REUNIÕES DALY
 https://fab.webex.com/meet/desenvolvimento.sigpesng
 
+desenvolvimento.sigpesng@fab.mil.br
+UdpGGEY1@8iG#ED2
 
 CESSO AO BD SIGPES-NG 
 
@@ -147,9 +149,10 @@ PROXY_HOST=proxybrasilia.intraer;PROXY_PORT=8080;PROXY_USER=CPF;PROXY_PASS=ClSEN
 #Java
 O Intellij é uma ótima IDE para trabalhar com Java e outras linguagens JVM, como Kotlin, Scala e Groovy, em todos os tipos de aplicações. Pensando nisso separei os principais atalhos para melhor utilização.
 
-#### Geral ####s
+#### Geral ####
 Alt + 1: Abrir/Fechar aba de projetos
 Alt + Shift + Insert: Alterna entre modo de seleção de linha/coluna
+
 Ctrl + Shift + F12: Expandir a tela
 Na aba de projetos
 Alt + Insert: Para criar um novo arquivo
@@ -191,3 +194,26 @@ Ctrl + Q: Documentação rápida
 Ctrl + / ou Ctrl + Shift + /: Comentar código
 Ctrl + Shift + Alt + T: Métodos de refatoração
 Ctrl + Alt + O: Reajustar imports da classe (remove imports não utilizados)
+
+
+
+SELECT * FROM SIGPESNG.T_MILITAR_EXTERNO;
+SELECT * FROM SIGPESNG.T_CIVIL_EXTERNO ;
+SELECT * FROM SIGPESNG.T_PESSOA;
+SELECT * FROM SIGPESNG.T_EMAIL;
+SELECT * FROM SIGPESNG.T_TIPO_CONTATO; 
+SELECT * FROM SIGPESNG.T_TELEFONE_PESSOA;
+SELECT * FROM SIGPESNG.T_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_LIMINAR_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_MOTIVO_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_OBSERVACAO_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_PUB_INCORPORACAO_MATRICULA;
+SELECT * FROM SIGPESNG.T_TURMA_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_SIT_INCORPORACAO_MATRICULA;
+SELECT * FROM SIGPESNG.T_CLASSE_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_FORCA_MILITAR;
+SELECT * FROM SIGPESNG.T_MILITAR;
+SELECT * FROM SIGPESNG.T_TURMA_MATRICULA;
+SELECT * FROM sigpesng.t_endereco_pessoa;
+SELECT * FROM sigpesng.t_organizacao;
+SELECT * FROM SIGPESNG.T_GRAU_ESCOLARIDADE;
