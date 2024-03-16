@@ -31,6 +31,28 @@ telnet exacc02hmlg-scan.ccarj.intraer 1521
 https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-pt
 
 
+Como fazer uma reinicialização limpa de uma instância do Docker
+Se você estiver usando o Docker-Machine, certifique-se de estar falando com a pessoa certa. Execute o comando docker-machine ls para descobrir qual deles está ativo no momento. Também é recomendado sempre refazer o comando:
+
+eval "$(docker-machine env <nome da máquina docker>)"
+
+Observação: a exclusão de volumes apagará seus dados. Faça backup de todos os dados necessários antes de excluir um contêiner.
+
+== Procedimento ==
+Pare o(s) contêiner(es) usando o seguinte comando:
+docker-compose down
+
+== Exclua todos os contêineres usando o seguinte comando: ==
+docker rm -f $(docker ps -a -q)
+
+== Exclua todos os volumes usando o seguinte comando: ==
+volume: 
+rm $(volume da janela de encaixe ls -q)
+
+== Reinicie os contêineres usando o seguinte comando: ==
+docker-compose up -d
+
+
 Para todas as instâncias
 docker stop $(docker ps -a -q)
 
@@ -217,3 +239,27 @@ SELECT * FROM SIGPESNG.T_TURMA_MATRICULA;
 SELECT * FROM sigpesng.t_endereco_pessoa;
 SELECT * FROM sigpesng.t_organizacao;
 SELECT * FROM SIGPESNG.T_GRAU_ESCOLARIDADE;
+
+
+cadastros de um novo incorporado
+
+
+SELECT * FROM SIGPESNG.T_TITULO_ELEITOR;
+SELECT * FROM SIGPESNG.T_PESSOA;
+SELECT * FROM SIGPESNG.T_EMAIL;
+SELECT * FROM SIGPESNG.T_CARTEIRA_TRABALHO ;
+SELECT * FROM SIGPESNG.T_CNH ;
+SELECT * FROM SIGPESNG.T_DADOS_FISICOS ;
+SELECT * FROM SIGPESNG.T_DADOS_SOCIOCULTURAIS ;
+
+SELECT * FROM SIGPESNG.T_DOCUMENTO_PESSOA ;
+SELECT * FROM SIGPESNG.T_ENDERECO_PESSOA ;
+SELECT * FROM SIGPESNG.T_LOCALIDADE ;
+SELECT * FROM SIGPESNG.T_GRAU_ESCOLARIDADE;
+
+SELECT * FROM SIGPESNG.T_TELEFONE_PESSOA;
+SELECT * FROM SIGPESNG.T_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_MOTIVO_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_TURMA_INCORPORACAO;
+SELECT * FROM SIGPESNG.T_TURMA_MATRICULA;
+
