@@ -26,6 +26,39 @@ DB_PORT: 1521
 telnet exacc02hmlg-scan.ccarj.intraer 1521
 
 
+pnpm api:generate:domain
+pnpm api:generate:process
+
+pnpm devw
+
+
+
+
+#################################### PLANO DE ESTUDOS FASE 1 ####################################
+
+INÍCIO: 29/04
+FIM: 17/05
+Dedicação de tempo integral
+
+1 - https://www.alura.com.br/curso-online-http-entendendo-web-por-baixo-dos-panos (10hr)
+2 - https://www.alura.com.br/curso-online-javascript-metodos-array (08hr)
+3 - https://www.alura.com.br/curso-online-javascript-padroes-abordagem-funcional (12hr)
+4 - https://www.alura.com.br/curso-online-typescript-pratica-projeto-completo-typescript-modulos (8hr)
+5 - https://www.alura.com.br/curso-online-vue3-comecando-framework (10hr)
+6 - https://www.alura.com.br/curso-online-vue-3-componentes-diretivas-reatividade-framework (8hr)
+7 - https://www.alura.com.br/curso-online-vue3-avancando-framework (6hr)
+8 - https://www.alura.com.br/curso-online-praticando-css-grid-flexbox (10hr)
+
+#################################### MÓDULO JUSTIÇA FASE 2 ####################################
+
+Desenvolver o módulo Justiça a partir do dia 20/05
+Suporte front end exclusivo para projeto front end (não back end, não negócio, apenas front-end) de 1hr por dia por 2 semanas
+O objetivo será orientar, com base no nivelamento oferecido na fase 1, o desenvolvimento do projeto front end do módulo Justiça
+
+
+
+
+
 ##################### DOCKER ###################################################################
 
 https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-pt
@@ -135,6 +168,10 @@ npm install
 
 ####################################################################################################################################
 
+select JSON_VALUE(t.js_variables,'$.dadosTitular.nome') AS Name,  t.*
+ from camunda.t_camunda_task t
+ where JSON_VALUE(t.js_variables,'$.status') = 'INDEFERIDO';
+ 
 
 
 Acquire{
