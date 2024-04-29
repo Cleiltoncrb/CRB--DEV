@@ -57,6 +57,16 @@ O objetivo será orientar, com base no nivelamento oferecido na fase 1, o desenv
 
 
 
+FROT-END
+PS C:\Users\00666263159\Documents\CLEILTON__CCA-BR\GIT\CRB--DEV\CAPACITACAO-FROT-END\curso-react-alurabooks> npm install
+PS C:\Users\00666263159\Documents\CLEILTON__CCA-BR\GIT\CRB--DEV\CAPACITACAO-FROT-END\curso-react-alurabooks> npm start
+
+
+BACK-END
+C:\Users\00666263159\Documents\CLEILTON__CCA-BR\GIT\CRB--DEV\CAPACITACAO-FROT-END\api-alurabooks>npm install
+C:\Users\00666263159\Documents\CLEILTON__CCA-BR\GIT\CRB--DEV\CAPACITACAO-FROT-END\api-alurabooks>npm run start-auth
+
+
 
 
 ##################### DOCKER ###################################################################
