@@ -82,6 +82,11 @@ RBClebr2933@
 CleBR2933@ - 13/03/2024
 
 
+##################### REDMINE #########################
+USER: cleiltoncrb
+SENHA: CleBR2933#
+
+
 ##################### DOCKER HUB #########################
 cleilton.oi18@gmail.com
 Clebr2933docker
