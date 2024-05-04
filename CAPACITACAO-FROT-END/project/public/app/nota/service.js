@@ -17,7 +17,7 @@ export const notasService = {
     });
   }, 
 
-  somaDeItens(code){
+  sumItems(code){
     const filterItems = partialize(filterItemsByCode, code);
 
     const sumItems = pipe(
