@@ -7,13 +7,12 @@ export const EventEmitter = {
   },
   emit(event, data) {
     const listeners = events.get(event);
-    if (listeners) {
-      listeners.forEach((listener) => listener(data));
-    }
-  },
-  off(event, listener) {
-    if (events.has(event)) {
-      events.get(event).splice(events.get(event).indexOf(listener), 1);
-    }
-  },
+    if (listeners) 
+      listeners.forEach(listener => listener(data));
+    
+  }
 };
+
+
+
+ 
