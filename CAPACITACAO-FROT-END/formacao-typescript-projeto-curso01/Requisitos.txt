@@ -1,3 +1,7 @@
+tss -w  ==> para executar o Typescript
+
+
+
 * Cada transação realizada no sistema deve possuir SOMENTE as seguintes informações:
   1) Data da Transação (Date)
   2) Tipo de Transação (Depósito, Transferência, Pagamento de Boleto)
