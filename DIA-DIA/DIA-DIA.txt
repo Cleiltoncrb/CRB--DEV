@@ -10,6 +10,21 @@ Para mais informações entrar em contato com o Ten. Cleilton, CCA-BR.
 00666263159
 Clebr2933@
 
+
+**************************************************************
+NOVO RACNHER                                                **
+https://rancher.sistemas.sti.intraer/dashboard/auth/login   **
+															**
+**************************************************************
+
+##################### OPERATE #####################
+
+https://camunda.dev.rancher.ccarj.intraer/operate
+
+
+###################################################
+
+
 Bom dia,
 
 Incumbiu-me a Senhora Chefe da SPE, informar ao efetivo que acrescente em todo Requerimento confeccionado no segundo parágrafo a seguinte frase:
@@ -53,6 +68,12 @@ https://fab.webex.com/meet/desenvolvimento.sigpesng
 
 user: desenvolvimento.sigpesng@fab.mil.br
 Senha: UdpGGEY1@8iG#ED2
+
+
+
+##################### NUXT LAYER #####################
+
+senha publish : deploy123
 
 
 ##################### GIT LAB #####################
@@ -110,8 +131,12 @@ senha: 3WsfUBQl
 
 ##################### NUXEO MEU USUÁRIO #########################
 
-cleilton.oi18@gmail.com
-CCAnux@2023
+http://10.52.212.54/nuxeo/ui/#!/browse/SISPLAER
+
+
+
+User: sisplaer
+Senha: N#@hKjgS62qU7Mzq (editado) 
 
 ##################### ChatGPT #########################
 
