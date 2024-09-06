@@ -1,0 +1,64 @@
+stages:
+  - build_docker
+  - deploy
+
+variables:
+  PROJECT_NAME: envolvimento-justica-fe
+  PROJECT_GROUP: pessoal
+  PROJECT_NAMESPACE: sigpes-ng
+  RANCHER_KEY: $CI_RANCHER_KEY
+  RANCHER_SECRET: $CI_RANCHER_SECRET
+  RANCHER_URL: "https://rancher.ccarj.intraer"
+  REGISTRY_URL: "registry.ccarj.intraer"
+  DEPLOY_VERSION: $CI_COMMIT_TAG
+  K8S_CLUSTER: development
+
+cache:
+  paths:
+    - /app/.output
+  key: "$CI_COMMIT_SHA"
+
+build_docker:
+  stage: build_docker
+  tags:
+    - shell
+  image: registry.ccarj.intraer/mirror/library/docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  rules:
+    - if: $CI_COMMIT_TAG
+      variables:
+        DEPLOY_VERSION: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == "develop"
+      variables:
+        DEPLOY_VERSION: dev-$CI_COMMIT_SHORT_SHA
+    - if: '$CI_COMMIT_REF_NAME =~ /^release\/\d+\.\d+\.\d+$/'
+      variables:
+        DEPLOY_VERSION: rc-$CI_COMMIT_SHORT_SHA
+  script:
+    - docker build --no-cache -t registry.ccarj.intraer/$PROJECT_NAMESPACE/$PROJECT_NAME:$DEPLOY_VERSION .
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin registry.ccarj.intraer
+    - docker push registry.ccarj.intraer/$PROJECT_NAMESPACE/$PROJECT_NAME:$DEPLOY_VERSION
+
+deploy:
+  stage: deploy
+  dependencies:
+    - build_docker
+  tags:
+    - docker
+  image:
+    name: registry.ccarj.intraer/arquitetura/rancher-deployer:1.0.2
+  rules:
+    - if: $CI_COMMIT_TAG
+      variables:
+        DEPLOY_VERSION: $CI_COMMIT_TAG
+        K8S_CLUSTER: "prod"
+    - if: $CI_COMMIT_BRANCH == "develop"
+      variables:
+        DEPLOY_VERSION: dev-$CI_COMMIT_SHORT_SHA
+    - if: '$CI_COMMIT_REF_NAME =~ /^release\/\d+\.\d+\.\d+$/'
+      variables:
+        DEPLOY_VERSION: rc-$CI_COMMIT_SHORT_SHA
+        K8S_CLUSTER: "staging"
+  script:
+    - "rancher-deployer deploy --rancher-url=$RANCHER_URL --rancher-key=$RANCHER_KEY --rancher-secret=$RANCHER_SECRET --cluster=$K8S_CLUSTER --namespace=$PROJECT_NAMESPACE --project=$PROJECT_GROUP --deployment=$PROJECT_NAME --image=$REGISTRY_URL/$PROJECT_NAMESPACE/$PROJECT_NAME:$DEPLOY_VERSION --no-ssl-verify"
